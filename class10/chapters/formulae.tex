@@ -1,0 +1,205 @@
+\begin{enumerate}[label=\thesubsection.\arabic*., ref=\thesubsection.\theenumi]
+\numberwithin{equation}{enumi}
+	\item The {\em tangent} to a circle with centre $\vec{O}$ and radius $r$ at the point $\vec{A}$ is perpendicular to the radius $\vec{OA}$,
+		\begin{align}
+			\brak{\vec{A}-\vec{O}}^{\top}\brak{\vec{P}-\vec{A}} = 0
+			\label{eq:c10-tangent}
+		\end{align}
+		where $\vec{P}$ is any other point on the tangent.
+	\item The lengths of the two tangents from an external point $\vec{P}$ are equal,
+		\begin{align}
+			\norm{\vec{P}-\vec{A}} = \norm{\vec{P}-\vec{B}}
+			\label{eq:c10-tangent-eq}
+		\end{align}
+	\item The angle $\theta$ between $\vec{a}$ and $\vec{b}$ is given by
+		\begin{align}
+			\cos\theta = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}}
+			\label{eq:c10-angle}
+		\end{align}
+	\item The sum of the angles of a quadrilateral is
+		\begin{align}
+			360^{\circ}
+			\label{eq:c10-quad}
+		\end{align}
+	\item The {\em mean} of $x_i$ with frequencies $f_i$ is
+		\begin{align}
+			\bar{x} = \frac{\sum f_i x_i}{\sum f_i}
+		\end{align}
+	\item The {\em empirical relation} between the mean, median and mode is
+		\begin{align}
+			3\,\text{median} = \text{mode} + 2\,\text{mean}
+			\label{eq:c10-empirical}
+		\end{align}
+	\item The {\em discriminant} of $ax^2+bx+c=0$ is
+		\begin{align}
+			D = b^2-4ac
+			\label{eq:c10-disc}
+		\end{align}
+		The roots are equal if and only if $D=0$.
+	\item The {\em z-transform} of a pmf $p[n]$ is
+		\begin{align}
+			H(z) = \sum_{n} p[n]z^{-n}, \qquad H(1) = 1
+			\label{eq:c10-ztrans}
+		\end{align}
+	\item If $X$ and $Y$ are independent, the pmf of $S=X+Y$ is the convolution of the pmfs, so
+		\begin{align}
+			p_S[n] = p_X[n]*p_Y[n]
+			\quad \xleftrightarrow{\;\mathcal{Z}\;} \quad
+			H_S(z) = H_X(z)H_Y(z)
+			\label{eq:c10-conv}
+		\end{align}
+		and $\Pr\brak{S=n}$ is the coefficient of $z^{-n}$ in $H_S(z)$.
+	\item The {\em slant height} of a frustum of height $h$ with radii $R$ and $r$ is
+		\begin{align}
+			l = \sqrt{h^2+\brak{R-r}^2}
+			\label{eq:c10-frustum}
+		\end{align}
+	\item A line that meets a circle at two points is called a {\em secant}. A line at distance $d$ from the centre meets a circle of radius $r$ in two points if $d<r$.
+	\item The tangents at the ends of a diameter are parallel. For $\vec{m}_1,\vec{m}_2$ the direction vectors of two lines,
+		\begin{align}
+			\det\myvec{\vec{m}_1 & \vec{m}_2} = 0
+			\label{eq:c10-parallel}
+		\end{align}
+	\item The points $\vec{A},\vec{B},\vec{C}$ are collinear if
+		\begin{align}
+			\det\myvec{\vec{B}-\vec{A} & \vec{C}-\vec{A}} = 0
+			\label{eq:c10-collinear}
+		\end{align}
+	\item If $\alpha,\beta$ are the zeroes of $ax^2+bx+c$, then
+		\begin{align}
+			\alpha+\beta = -\frac{b}{a},\qquad \alpha\beta = \frac{c}{a}
+			\label{eq:c10-zeroes}
+		\end{align}
+	\item The volume of a cylinder of radius $r$ and height $h$ is
+		\begin{align}
+			V = \pi r^2 h
+			\label{eq:c10-cyl}
+		\end{align}
+	\item If $\vec{O}$ is the midpoint of $\vec{A}$ and $\vec{B}$, then
+		\begin{align}
+			\vec{B} = 2\vec{O}-\vec{A}
+			\label{eq:c10-mid}
+		\end{align}
+	\item For positive integers $p,q$,
+		\begin{align}
+			\text{LCM}\brak{p,q}\times\text{HCF}\brak{p,q} = pq
+			\label{eq:c10-lcm}
+		\end{align}
+		The LCM takes the highest power of each prime in $p$ and $q$.
+	\item If $\triangle ABC\sim\triangle PQR$, the ratio of the areas is the square of the ratio of corresponding sides,
+		\begin{align}
+			\frac{\text{ar}\brak{ABC}}{\text{ar}\brak{PQR}} = \brak{\frac{BC}{QR}}^2
+			\label{eq:c10-simarea}
+		\end{align}
+	\item In a right triangle, the {\em tangent} of an angle $\theta$ is
+		\begin{align}
+			\tan\theta = \frac{\text{opposite}}{\text{adjacent}}, \qquad \tan 30^{\circ} = \frac{1}{\sqrt{3}}
+			\label{eq:c10-tan}
+		\end{align}
+	\item {\em Euclid's division lemma}: for integers $n$ and $d>0$, there are unique $q,r$ with
+		\begin{align}
+			n = dq+r, \qquad 0\le r<d, \qquad r = n \bmod d
+			\label{eq:c10-euclid}
+		\end{align}
+	\item The roots of $Ax^2+Bx+C=0$ are
+		\begin{align}
+			x = \frac{-B\pm\sqrt{B^2-4AC}}{2A}
+			\label{eq:c10-quadform}
+		\end{align}
+	\item If $PQ\parallel BC$ in $\triangle ABC$, then $\triangle APQ\sim\triangle ABC$ and
+		\begin{align}
+			\frac{AQ}{AC} = \frac{AP}{AB} = \frac{PQ}{BC} = k
+			\label{eq:c10-thales}
+		\end{align}
+		The points are $\vec{P}=\vec{A}+k\brak{\vec{B}-\vec{A}}$ and $\vec{Q}=\vec{A}+k\brak{\vec{C}-\vec{A}}$.
+	\item The {\em probability} of an event $E$ is
+		\begin{align}
+			\Pr\brak{E} = \frac{\text{number of favourable outcomes}}{\text{total number of outcomes}}
+			\label{eq:c10-prob}
+		\end{align}
+		and $\Pr\brak{E'} = 1-\Pr\brak{E}$.
+	\item The {\em mode} of grouped data with modal class lower limit $l$, class size $h$, modal frequency $f_1$ and the frequencies $f_0,f_2$ of the classes before and after it, is
+		\begin{align}
+			\text{mode} = l+\frac{f_1-f_0}{2f_1-f_0-f_2}\,h
+			\label{eq:c10-mode}
+		\end{align}
+	\item The area of the triangle with vertices $\vec{A},\vec{B},\vec{C}$ is
+		\begin{align}
+			\frac{1}{2}\abs{\det\myvec{\vec{B}-\vec{A} & \vec{C}-\vec{A}}}
+			\label{eq:c10-area}
+		\end{align}
+	\item Two linear equations in $x,y$ can be written as $\vec{M}\vec{x}=\vec{c}$. If $\det\vec{M}\ne 0$,
+		\begin{align}
+			\vec{x} = \vec{M}^{-1}\vec{c},\qquad
+			\myvec{p&q\\r&s}^{-1} = \frac{1}{ps-qr}\myvec{s&-q\\-r&p}
+			\label{eq:c10-linsys}
+		\end{align}
+	\item The tangent points $\vec{A}$ from an external point $\vec{P}$ to the circle with centre $\vec{O}$ and radius $r$ satisfy
+		\begin{align}
+			\norm{\vec{A}-\vec{O}} = r,\qquad
+			\brak{\vec{A}-\vec{O}}^{\top}\brak{\vec{A}-\vec{P}} = 0
+			\label{eq:c10-tangpts}
+		\end{align}
+		so $\vec{A}$ lies on the circle with $OP$ as diameter, and the tangent length is $\sqrt{OP^2-r^2}$.
+	\item The area of a circle of diameter $d$ and the volume of a coin of thickness $t$ are
+		\begin{align}
+			\text{area} = \pi\brak{\frac{d}{2}}^2, \qquad \text{volume} = \text{area}\times t
+			\label{eq:c10-coin}
+		\end{align}
+	\item {\em SSS and SAS similarity}: $\triangle ABC\sim\triangle PQR$ if
+		\begin{align}
+			\frac{AB}{PQ} = \frac{BC}{QR} = \frac{CA}{RP}
+			\quad\text{or}\quad
+			\frac{AB}{PQ} = \frac{AC}{PR},\ \angle A = \angle P
+			\label{eq:c10-sim}
+		\end{align}
+		Similar triangles have equal corresponding angles.
+	\item The diagonals of a parallelogram bisect each other. The median $AD$ of $\triangle ABC$ joins $\vec{A}$ to the midpoint
+		\begin{align}
+			\vec{D} = \frac{\vec{B}+\vec{C}}{2}
+			\label{eq:c10-median}
+		\end{align}
+	\item {\em Pythagoras theorem}: if $\angle A=90^{\circ}$ in $\triangle ABC$, then
+		\begin{align}
+			BC^2 = AB^2+AC^2
+			\label{eq:c10-pyth}
+		\end{align}
+	\item The {\em angle of depression} of an object seen from a height equals the angle of elevation of the top from the object. The values used are
+		\begin{align}
+			\tan 45^{\circ} = 1,\qquad \tan 60^{\circ} = \sqrt{3}
+			\label{eq:c10-tan4560}
+		\end{align}
+	\item The volumes of a cone and a hemisphere of radius $r$, and of a ring of height $H$ with inner and outer radii $r$ and $R$, are
+		\begin{align}
+			V_{\text{cone}} = \frac{1}{3}\pi r^2 h,\quad
+			V_{\text{hemisphere}} = \frac{2}{3}\pi r^3,\quad
+			V_{\text{ring}} = \pi\brak{R^2-r^2}H
+			\label{eq:c10-vol}
+		\end{align}
+	\item If $A$ and $B$ finish a work in $T$ days together and alone in $a$ and $b$ days, the work done in one day adds up,
+		\begin{align}
+			\frac{1}{a}+\frac{1}{b} = \frac{1}{T}
+			\label{eq:c10-work}
+		\end{align}
+	\item {\em Division algorithm}: for polynomials $f$ and $g\ne 0$,
+		\begin{align}
+			f\brak{x} = g\brak{x}\,q\brak{x}+r\brak{x}
+			\label{eq:c10-poly}
+		\end{align}
+		where $\deg r<\deg g$. If $g$ divides $f$ completely, $r=0$, and the zeroes of $q$ are zeroes of $f$.
+	\item The {\em Newton--Raphson method} finds a zero of $f\brak{x}$ from a starting point $x_0$ by
+		\begin{align}
+			x_{n+1} = x_n-\frac{f\brak{x_n}}{f'\brak{x_n}}
+			\label{eq:c10-newton}
+		\end{align}
+	\item The {\em median} of grouped data with $N=\sum f$, median class lower limit $l$, class size $h$, frequency $f$ of the median class and cumulative frequency $cf$ of the class before it, is
+		\begin{align}
+			\text{median} = l+\frac{\frac{N}{2}-cf}{f}\,h
+			\label{eq:c10-gmedian}
+		\end{align}
+	\item The {\em `less than' ogive} is drawn by plotting the points $\brak{\text{upper class limit},\ \text{cumulative frequency}}$ and joining them. The median is the $x$-coordinate of the point of the ogive with $y=\frac{N}{2}$. Between two points $\vec{P}_1,\vec{P}_2$, a point of the ogive is
+		\begin{align}
+			\vec{P} = \vec{P}_1+\lambda\brak{\vec{P}_2-\vec{P}_1}, \qquad 0\le\lambda\le 1
+			\label{eq:c10-ogive}
+		\end{align}
+\end{enumerate}

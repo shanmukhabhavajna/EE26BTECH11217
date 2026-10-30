@@ -1,0 +1,402 @@
+\begin{enumerate}[label=\thesubsection.\arabic*., ref=\thesubsection.\theenumi]
+\numberwithin{equation}{enumi}
+	\item The {\em position vector} of the point $\vec{A}(x,y,z)$ is
+		\begin{align}
+			\vec{a} = \myvec{x\\y\\z}
+		\end{align}
+	\item The {\em magnitude} of $\vec{a}$ is
+		\begin{align}
+			\norm{\vec{a}} = \sqrt{\vec{a}^{\top}\vec{a}} = \sqrt{x^2+y^2+z^2}
+			\label{eq:c12-norm}
+		\end{align}
+	\item The distance between the points $\vec{A}$ and $\vec{B}$ is
+		\begin{align}
+			\norm{\vec{A}-\vec{B}} = \sqrt{\brak{\vec{A}-\vec{B}}^{\top}\brak{\vec{A}-\vec{B}}}
+		\end{align}
+	\item The {\em unit vector} along $\vec{a}\neq\vec{0}$ is
+		\begin{align}
+			\hat{\vec{a}} = \frac{\vec{a}}{\norm{\vec{a}}}
+		\end{align}
+	\item The {\em section formula}: if $\vec{D}$ divides $AB$ in the ratio $k:1$,
+		\begin{align}
+			\vec{D} = \frac{k\vec{B}+\vec{A}}{k+1}
+		\end{align}
+	\item The {\em dot product} and the angle $\theta$ between $\vec{a}$ and $\vec{b}$:
+		\begin{align}
+			\vec{a}^{\top}\vec{b} = \norm{\vec{a}}\norm{\vec{b}}\cos\theta,
+			\qquad
+			\vec{a}\perp\vec{b} \iff \vec{a}^{\top}\vec{b}=0
+			\label{eq:c12-dot}
+		\end{align}
+	\item The {\em cross product}:
+		\begin{align}
+			\norm{\vec{a}\times\vec{b}} = \norm{\vec{a}}\norm{\vec{b}}\sin\theta
+		\end{align}
+		The area of the triangle $ABC$ is
+		\begin{align}
+			\frac{1}{2}\norm{\brak{\vec{B}-\vec{A}}\times\brak{\vec{C}-\vec{A}}}
+		\end{align}
+	\item The triangle inequality:
+		\begin{align}
+			\norm{\vec{a}+\vec{b}} \le \norm{\vec{a}}+\norm{\vec{b}}
+		\end{align}
+	\item The equation of a line through $\vec{A}$ with direction vector $\vec{m}$ is
+		\begin{align}
+			\vec{x} = \vec{A}+\kappa\vec{m}, \quad \kappa\in\mathbb{R}
+		\end{align}
+	\item The plane with normal vector $\vec{n}$ can be expressed as
+		\begin{align}
+			\vec{n}^{\top}\vec{x} = c
+			\label{eq:c12-plane}
+		\end{align}
+		For the plane $ax+by+cz+d=0$,
+		\begin{align}
+			\vec{n}=\myvec{a\\b\\c},\quad c=-d
+		\end{align}
+		The plane through $\vec{A}$ is $\vec{n}^{\top}\brak{\vec{x}-\vec{A}}=0$.
+	\item The distance of the point $\vec{P}$ from the plane $\vec{n}^{\top}\vec{x}=c$ is
+		\begin{align}
+			\frac{\abs{\vec{n}^{\top}\vec{P}-c}}{\norm{\vec{n}}}
+		\end{align}
+	\item The planes $\vec{n}_1^{\top}\vec{x}=c_1$ and $\vec{n}_2^{\top}\vec{x}=c_2$ are parallel if
+		\begin{align}
+			\vec{n}_1 = k\vec{n}_2
+			\label{eq:c12-plane-par}
+		\end{align}
+	\item The distance between the parallel planes $\vec{n}^{\top}\vec{x}=c_1$ and $\vec{n}^{\top}\vec{x}=c_2$ is
+		\begin{align}
+			\frac{\abs{c_1-c_2}}{\norm{\vec{n}}}
+			\label{eq:c12-plane-dist}
+		\end{align}
+		If the normals differ by a scale factor, first multiply one equation so that both have the same $\vec{n}$.
+	\item The {\em determinant} of $\vec{A}=\myvec{a&b\\c&d}$ and its inverse:
+		\begin{align}
+			\mydet{\vec{A}} = ad-bc,\quad
+			\vec{A}^{-1} = \frac{1}{\mydet{\vec{A}}}\myvec{d&-b\\-c&a}
+		\end{align}
+	\item The determinant of a $3\times 3$ matrix, expanded along the first row, is
+		\begin{align}
+			\mydet{\begin{matrix}a&b&c\\d&e&f\\g&h&i\end{matrix}}
+			= a\brak{ei-fh}-b\brak{di-fg}+c\brak{dh-eg}
+			\label{eq:c12-det3}
+		\end{align}
+		If a row or column has a single nonzero entry, expand along it.
+	\item Properties of determinants:
+		\begin{align}
+			\mydet{\vec{A}^{\top}} = \mydet{\vec{A}},\quad
+			\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}},\quad
+			\mydet{\vec{A}^{-1}} = \frac{1}{\mydet{\vec{A}}}
+			\label{eq:c12-detprops}
+		\end{align}
+	\item The system $\vec{A}\vec{x}=\vec{b}$ with $\mydet{\vec{A}}\neq 0$ has the unique solution
+		\begin{align}
+			\vec{x} = \vec{A}^{-1}\vec{b}
+		\end{align}
+	\item The {\em product} of $\vec{A}=\myvec{a_{ij}}_{m\times n}$ and $\vec{B}=\myvec{b_{ij}}_{n\times p}$ is
+		\begin{align}
+			\brak{\vec{A}\vec{B}}_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj}
+			\label{eq:c12-matmul}
+		\end{align}
+	\item For $2\times 2$ matrices,
+		\begin{align}
+			\myvec{a&b\\c&d}\myvec{p&q\\r&s}
+			= \myvec{ap+br&aq+bs\\cp+dr&cq+ds}
+			\label{eq:c12-matmul-2x2}
+		\end{align}
+	\item The {\em square} of a matrix is
+		\begin{align}
+			\vec{A}^2 = \vec{A}\vec{A}
+			\label{eq:c12-matsq}
+		\end{align}
+	\item Basic derivatives:
+		\begin{align}
+			\frac{d}{dx}x^n = nx^{n-1},\quad
+			\frac{d}{dx}e^x = e^x,\quad
+			\frac{d}{dx}\ln x = \frac{1}{x},
+		\end{align}
+		\begin{align}
+			\frac{d}{dx}\sin x = \cos x,\quad
+			\frac{d}{dx}\cos x = -\sin x
+		\end{align}
+	\item The product, quotient and chain rules:
+		\begin{align}
+			\brak{uv}' = u'v+uv',\quad
+			\brak{\frac{u}{v}}' = \frac{u'v-uv'}{v^2},\quad
+			\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}
+			\label{eq:c12-chain}
+		\end{align}
+	\item Basic integrals:
+		\begin{align}
+			\int x^n\,dx = \frac{x^{n+1}}{n+1}+C\ \brak{n\neq -1},\quad
+			\int \frac{dx}{x} = \ln\abs{x}+C,
+		\end{align}
+		\begin{align}
+			\int e^x\,dx = e^x+C,\quad
+			\int \sin x\,dx = -\cos x+C,\quad
+			\int \cos x\,dx = \sin x+C
+		\end{align}
+	\item The integrals
+		\begin{align}
+			\int \sin kx\,dx = -\frac{\cos kx}{k}+C,\quad
+			\int \cos kx\,dx = \frac{\sin kx}{k}+C
+			\label{eq:c12-int-trig}
+		\end{align}
+	\item Integration by parts:
+		\begin{align}
+			\int u\,dv = uv-\int v\,du
+		\end{align}
+	\item The fundamental theorem of calculus:
+		\begin{align}
+			\int_a^b f(x)\,dx = F(b)-F(a),\quad F'(x)=f(x)
+		\end{align}
+	\item The double angle formulae:
+		\begin{align}
+			\sin 2\theta = 2\sin\theta\cos\theta,\quad
+			\cos 2\theta = \cos^2\theta-\sin^2\theta = 2\cos^2\theta-1
+			\label{eq:c12-double}
+		\end{align}
+	\item By substitution $x=\sin\theta$, $\sqrt{1-x^2}=\cos\theta$ and
+		\begin{align}
+			\tan\brak{\sin^{-1}x} = \frac{x}{\sqrt{1-x^2}}
+			\label{eq:c12-tan-asin}
+		\end{align}
+	\item The first-order linear differential equation $\frac{dy}{dx}+Py=Q$ has the solution
+		\begin{align}
+			y\,e^{\int P\,dx} = \int Q\,e^{\int P\,dx}\,dx + C
+		\end{align}
+	\item {\em Euler's method.} For $\frac{dy}{dx}=f\brak{x,y}$, $y\brak{x_0}=y_0$, with step size $h$,
+		\begin{align}
+			y_{n+1} = y_n + h f\brak{x_n,y_n},\quad x_{n+1}=x_n+h
+			\label{eq:c12-euler}
+		\end{align}
+	\item A {\em linear programming problem} (LPP) optimises the {\em objective function}
+		\begin{align}
+			Z = \vec{c}^{\top}\vec{x}
+			\label{eq:c12-lpp}
+		\end{align}
+		subject to the linear constraints $\vec{A}\vec{x}\le\vec{b}$, $\vec{x}\ge\vec{0}$.
+	\item The probability of an event $E$ and the addition rule:
+		\begin{align}
+			\Pr\brak{E} = \frac{\text{favourable outcomes}}{\text{total outcomes}},\quad
+			\Pr\brak{A+B} = \Pr\brak{A}+\Pr\brak{B}-\Pr\brak{AB}
+		\end{align}
+	\item For independent events $A$ and $B$,
+		\begin{align}
+			\Pr\brak{AB} = \Pr\brak{A}\Pr\brak{B},\quad
+			\Pr\brak{A+B} = 1-\Pr\brak{A'}\Pr\brak{B'}
+			\label{eq:c12-comp}
+		\end{align}
+	\item The conditional probability and Bayes' theorem:
+		\begin{align}
+			\Pr\brak{A|B} = \frac{\Pr\brak{AB}}{\Pr\brak{B}},\quad
+			\Pr\brak{E_i|A} = \frac{\Pr\brak{E_i}\Pr\brak{A|E_i}}{\sum_j \Pr\brak{E_j}\Pr\brak{A|E_j}}
+			\label{eq:c12-cond}
+		\end{align}
+	\item For a binomial random variable $X\sim B\brak{n,p}$, $q=1-p$,
+		\begin{align}
+			\Pr\brak{X=r} = \binom{n}{r}p^rq^{n-r},\quad
+			\text{mean}=np,\quad \text{variance}=npq
+		\end{align}
+	\item A square matrix $\vec{A}$ is {\em singular} if
+		\begin{align}
+			\mydet{\vec{A}} = 0
+			\label{eq:c12-singular}
+		\end{align}
+	\item A square matrix is {\em symmetric} if
+		\begin{align}
+			\vec{A}^{\top} = \vec{A}
+			\label{eq:c12-sym}
+		\end{align}
+		and {\em idempotent} if $\vec{A}^2=\vec{A}$.
+	\item If $\vec{A}\vec{B}=\vec{B}\vec{A}$ (for example $\vec{B}=k\vec{I}$),
+		\begin{align}
+			\brak{\vec{A}+\vec{B}}^3 = \vec{A}^3+3\vec{A}^2\vec{B}+3\vec{A}\vec{B}^2+\vec{B}^3
+			\label{eq:c12-binom}
+		\end{align}
+	\item For $x>0$,
+		\begin{align}
+			\tan\brak{\cot^{-1}x} = \frac{1}{x}
+			\label{eq:c12-cot}
+		\end{align}
+	\item The tangent addition formula and the angle sum of a triangle:
+		\begin{align}
+			\tan\brak{A+B} = \frac{\tan A+\tan B}{1-\tan A\tan B},\quad
+			A+B+C=\pi
+			\label{eq:c12-tan-add}
+		\end{align}
+	\item The {\em integrating factor} of $\frac{dy}{dx}+Py=Q$ is
+		\begin{align}
+			\mu\brak{x} = e^{\int P\,dx},\quad \mu' = P\mu
+			\label{eq:c12-if}
+		\end{align}
+		and $\brak{\mu y}' = \mu Q$.
+	\item The differential equation $\frac{dy}{dx}=f\brak{x}g\brak{y}$ can be solved by separating the variables:
+		\begin{align}
+			\int\frac{dy}{g\brak{y}} = \int f\brak{x}\,dx + C
+			\label{eq:c12-sep}
+		\end{align}
+	\item For $k\neq 0$,
+		\begin{align}
+			\int e^{kx}\,dx = \frac{e^{kx}}{k}+C
+			\label{eq:c12-int-exp}
+		\end{align}
+	\item The second derivative of $y=\log x$ follows from $\frac{d}{dx}x^{-1}=-x^{-2}$:
+		\begin{align}
+			\frac{dy}{dx}=\frac{1}{x} \implies \frac{d^2y}{dx^2} = -\frac{1}{x^2}
+		\end{align}
+		Numerically, with step size $h$,
+		\begin{align}
+			y''_n = \frac{y_{n+2}-2y_{n+1}+y_n}{h^2}
+			\label{eq:c12-ypp}
+		\end{align}
+	\item The {\em projection} of $\vec{A}$ on $\vec{B}$ is
+		\begin{align}
+			\vec{C} = \frac{\vec{A}^{\top}\vec{B}}{\norm{\vec{B}}^2}\vec{B},\quad
+			\norm{\vec{C}} = \frac{\abs{\vec{A}^{\top}\vec{B}}}{\norm{\vec{B}}}
+			\label{eq:c12-proj}
+		\end{align}
+	\item If $\hat{\vec{a}}$ and $\hat{\vec{b}}$ are unit vectors with angle $\theta$ between them,
+		\begin{align}
+			\hat{\vec{a}}^{\top}\hat{\vec{a}} = \hat{\vec{b}}^{\top}\hat{\vec{b}} = 1,\quad
+			\hat{\vec{a}}^{\top}\hat{\vec{b}} = \cos\theta
+			\label{eq:c12-unit}
+		\end{align}
+	\item The {\em Laplace transform} of $f\brak{x}$, $x\ge 0$, is
+		\begin{align}
+			F\brak{s} = \mathcal{L}\cbrak{f\brak{x}} = \int_0^{\infty} e^{-sx}f\brak{x}\,dx
+			\label{eq:c12-lap}
+		\end{align}
+	\item The Laplace transform of the derivative, and of $x f\brak{x}$, are
+		\begin{align}
+			\mathcal{L}\cbrak{f'\brak{x}} = sF\brak{s}-f\brak{0},\quad
+			\mathcal{L}\cbrak{xf\brak{x}} = -\frac{dF\brak{s}}{ds}
+			\label{eq:c12-lap-der}
+		\end{align}
+	\item The standard transforms:
+		\begin{align}
+			\mathcal{L}\cbrak{1} = \frac{1}{s},\quad
+			\mathcal{L}\cbrak{x} = \frac{1}{s^2},\quad
+			\mathcal{L}\cbrak{e^{ax}} = \frac{1}{s-a}
+			\label{eq:c12-lap-tab}
+		\end{align}
+		The inverse transform is found using partial fractions, for example
+		\begin{align}
+			\frac{1}{s\brak{s-a}} = \frac{1}{a}\brak{\frac{1}{s-a}-\frac{1}{s}}
+			\label{eq:c12-lap-pf}
+		\end{align}
+	\item If $y_h$ is the solution of the homogeneous equation $\frac{dy}{dx}+Py=0$, the integrating factor of $\frac{dy}{dx}+Py=Q$ is
+		\begin{align}
+			\mu = \frac{1}{y_h} = e^{\int P\,dx}
+			\label{eq:c12-if-h}
+		\end{align}
+	\item The {\em composition} of functions is $\brak{f\circ g}\brak{x}=f\brak{g\brak{x}}$. The real cube root satisfies
+		\begin{align}
+			\brak{x^3}^{1/3} = x\ \text{ for all real } x
+			\label{eq:c12-comp-fn}
+		\end{align}
+	\item The triangle $ABC$ is right-angled at $C$ if
+		\begin{align}
+			\brak{\vec{A}-\vec{C}}^{\top}\brak{\vec{B}-\vec{C}} = 0
+			\iff
+			\norm{\vec{A}-\vec{B}}^2 = \norm{\vec{A}-\vec{C}}^2+\norm{\vec{B}-\vec{C}}^2
+			\label{eq:c12-pyth}
+		\end{align}
+	\item For $t>0$ and $n>-1$,
+		\begin{align}
+			\mathcal{L}\cbrak{t^n} = \frac{\Gamma\brak{n+1}}{s^{n+1}},\quad
+			\Gamma\brak{n+1} = n\Gamma\brak{n}
+			\label{eq:c12-lap-pow}
+		\end{align}
+	\item The {\em adjoint} of $\vec{A}=\myvec{a&b\\c&d}$ is
+		\begin{align}
+			\operatorname{adj}\vec{A} = \myvec{d&-b\\-c&a},\quad
+			\vec{A}\brak{\operatorname{adj}\vec{A}} = \brak{\operatorname{adj}\vec{A}}\vec{A} = \mydet{\vec{A}}\vec{I}
+			\label{eq:c12-adj}
+		\end{align}
+	\item The {\em z-transform} of the probability distribution $p\sbrak{n}=\Pr\brak{X=n}$ is
+		\begin{align}
+			P\brak{z} = \sum_{n} p\sbrak{n}z^{-n}
+			\label{eq:c12-ztrans}
+		\end{align}
+		The coefficient of $z^{-n}$ is $p\sbrak{n}$, and
+		\begin{align}
+			P\brak{1} = 1,\quad \mathbb{E}\sbrak{X} = -P'\brak{1}
+		\end{align}
+	\item If $X_1$ and $X_2$ are independent, the distribution of $X_1+X_2$ is the convolution of the two distributions, so its z-transform is the product
+		\begin{align}
+			P_{X_1+X_2}\brak{z} = P_{X_1}\brak{z}P_{X_2}\brak{z}
+			\label{eq:c12-zconv}
+		\end{align}
+	\item The Laplace transform of the logarithm, where $\gamma\approx 0.5772$ is Euler's constant:
+		\begin{align}
+			\mathcal{L}\cbrak{\ln x} = -\frac{\gamma+\ln s}{s}
+			\label{eq:c12-lap-ln}
+		\end{align}
+	\item The z-transform of the running sum $\sum_{m\le n}p\sbrak{m}$, that is of $\Pr\brak{X\le n}$, is
+		\begin{align}
+			\frac{P\brak{z}}{1-z^{-1}} = P\brak{z}\brak{1+z^{-1}+z^{-2}+\cdots}
+			\label{eq:c12-zcum}
+		\end{align}
+		so the coefficient of $z^{-n}$ is $\Pr\brak{X\le n}$, and $\Pr\brak{X\ge n+1}=1-\Pr\brak{X\le n}$.
+	\item To maximise $Z=\vec{c}^{\top}\vec{x}$ subject to $\vec{A}\vec{x}\le\vec{b}$, $\vec{x}\ge\vec{0}$, the maximum occurs at a corner point of the feasible region. The corner point where the two lines $\vec{A}\vec{x}=\vec{b}$ meet is
+		\begin{align}
+			\vec{x} = \vec{A}^{-1}\vec{b}
+			\label{eq:c12-corner}
+		\end{align}
+		and a line $\vec{n}^{\top}\vec{x}=c$ meets the axes at $\brak{\frac{c}{n_1},0}$ and $\brak{0,\frac{c}{n_2}}$.
+\item The distance between the skew lines $\vec{x}=\vec{A}_1+\lambda\vec{m}_1$ and $\vec{x}=\vec{A}_2+\mu\vec{m}_2$ is the length of the projection of $\vec{A}_2-\vec{A}_1$ on the common perpendicular $\vec{n}$, where $\vec{n}$ solves
+		\begin{align}
+			\myvec{\vec{m}_1^{\top}\\\vec{m}_2^{\top}}\vec{n}=\vec{0},\qquad
+			d = \frac{\abs{\vec{n}^{\top}\brak{\vec{A}_2-\vec{A}_1}}}{\norm{\vec{n}}}
+			\label{eq:c12-skew}
+		\end{align}
+		The lines intersect iff they are not parallel and $d=0$.
+	\item The planes $\vec{n}_1^{\top}\vec{x}=c_1$ and $\vec{n}_2^{\top}\vec{x}=c_2$ meet in a line, and every plane through that line is
+		\begin{align}
+			\brak{\vec{n}_1+\lambda\vec{n}_2}^{\top}\vec{x} = c_1+\lambda c_2
+			\label{eq:c12-plane-fam}
+		\end{align}
+	\item Adding a multiple of one column (row) to another does not change a determinant. Such an operation is multiplication by an elementary matrix $\vec{E}$ with $\mydet{\vec{E}}=1$, so
+		\begin{align}
+			\mydet{\vec{M}\vec{E}} = \mydet{\vec{E}\vec{M}} = \mydet{\vec{M}}
+			\label{eq:c12-detops}
+		\end{align}
+		A common factor of a column (row) can be taken out of the determinant.
+	\item The points $\brak{x,y}$, $\brak{x_1,y_1}$, $\brak{x_2,y_2}$ are collinear, and the area of the triangle with vertices $\brak{x_i,y_i}$, are given by
+		\begin{align}
+			\mydet{\begin{matrix}x&y&1\\x_1&y_1&1\\x_2&y_2&1\end{matrix}}=0,\qquad
+			\text{area}=\frac{1}{2}\abs{\mydet{\begin{matrix}x_1&y_1&1\\x_2&y_2&1\\x_3&y_3&1\end{matrix}}}
+			\label{eq:c12-det-line}
+		\end{align}
+	\item If $f'\brak{x_0}=0$, then $f$ has a maximum at $x_0$ if $f''\brak{x_0}<0$ and a minimum if $f''\brak{x_0}>0$. For a right circular cylinder of radius $r$ and height $h$,
+		\begin{align}
+			\text{curved surface area}=2\pi rh
+			\label{eq:c12-maxmin}
+		\end{align}
+		\item The definite integral as a {\em limit of sums}, with $h=\frac{b-a}{n}$:
+		\begin{align}
+			\int_a^b f\brak{x}\,dx = \lim_{h\to 0}\ h\sum_{i=1}^{n}f\brak{a+ih}
+			\label{eq:c12-riemann}
+		\end{align}
+		\begin{align}
+			\sum_{i=1}^{n}i = \frac{n\brak{n+1}}{2},\quad
+			\sum_{i=1}^{n}i^2 = \frac{n\brak{n+1}\brak{2n+1}}{6},\quad
+			\sum_{i=1}^{n}r^i = \frac{r\brak{r^n-1}}{r-1}
+		\end{align}
+	\item {\em Partial fractions} with a repeated factor:
+		\begin{align}
+			\frac{px+q}{\brak{x-a}^2\brak{x-b}} = \frac{A}{x-a}+\frac{B}{\brak{x-a}^2}+\frac{C}{x-b}
+			\label{eq:c12-partial}
+		\end{align}
+		Comparing coefficients gives a linear system $\vec{M}\myvec{A\\B\\C}=\vec{b}$, solved as $\myvec{A\\B\\C}=\vec{M}^{-1}\vec{b}$.
+	\item {\em Logarithmic differentiation}: if $y=u^v$, then $\ln y=v\ln u$ and
+		\begin{align}
+			\frac{dy}{dx} = u^v\brak{v'\ln u+\frac{vu'}{u}}
+			\label{eq:c12-logdiff}
+		\end{align}
+	\item The derivative of the inverse sine:
+		\begin{align}
+			\frac{d}{dx}\sin^{-1}x = \frac{1}{\sqrt{1-x^2}}
+			\label{eq:c12-asin-der}
+		\end{align}
+\end{enumerate}
