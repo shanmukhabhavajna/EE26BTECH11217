@@ -1,0 +1,88 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+%
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usetikzlibrary{patterns}
+\lstset{aboveskip=12pt}
+\usepackage[center]{caption}
+\raggedbottom
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black % Changes text color instead of placing a box around it
+}
+\usepackage{amsfonts}
+\makeindex
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+\onecolumn
+
+
+\title{
+	%\begin{flushleft}
+	\begin{center}
+	%MATRICES \\ In Geometry
+	Math for EE
+	\\
+\rule{0.4\columnwidth}{0.4pt}
+%\end{flushleft}
+\end{center}
+}
+\author{
+\vspace{11cm}
+	%\begin{flushleft}
+	\begin{center}
+\includegraphics[width=0.2\columnwidth]{figs/logo.jpg}
+\\
+		{	\huge G. V. V. Sharma}
+	\end{center}
+	%\end{flushleft}
+}
+\maketitle
+
+\newpage
+\section*{About this Book}
+
+This book contains solutions to the questions of the CBSE Class 10 Maths (Standard) paper 30/C/3 and the CBSE Class 12 Mathematics paper 65/C/3. Each solution is written with vectors and is verified numerically with Python or C codes. Roots are found by the Newton-Raphson method, linear equations are solved by Gauss elimination, definite integrals are evaluated by the trapezoidal rule, probability problems use the pmf and derivatives are checked with the Laplace transform and the Euler forward difference.
+
+Each chapter has a formulae section and a problems section. The codes are in the folders \texttt{class10/codes} and \texttt{class12/codes} and the figures are in the folders \texttt{class10/figs} and \texttt{class12/figs}.
+
+\newpage
+
+
+\tableofcontents
+
+\newpage
+\onecolumn
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+% ---------------- Class 10 ----------------
+% problems.tex refers to figures as figs/qN.png, so the graphics path is set to the class folder
+\graphicspath{{class10/}}
+\section{CBSE Class 10 Maths (Standard) 30/C/3}
+\subsection{Formulae}
+\input{class10/chapters/formulae.tex}
+\newpage
+\subsection{Problems}
+\input{class10/chapters/problems.tex}
+\newpage
+
+% ---------------- Class 12 ----------------
+\graphicspath{{class12/}}
+\section{CBSE Class 12 Mathematics 65/C/3}
+\subsection{Formulae}
+\input{class12/chapters/formulae.tex}
+\newpage
+\subsection{Problems}
+\input{class12/chapters/problems.tex}
+
+\end{document}
