@@ -1,0 +1,834 @@
+\item If $-\dfrac{5}{7}$, $a$, $2$ are consecutive terms in an Arithmetic Progression, then the value of `$a$' is
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $\dfrac{9}{7}$
+\item $\dfrac{9}{14}$
+\item $\dfrac{19}{7}$
+\item $\dfrac{19}{14}$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution:} Let the terms be $x(0) = -\dfrac{5}{7}$, $x(1) = a$, $x(2) = 2$. By \eqref{c10eq:ap}, for $n \ge 0$, so that $u(n) = 1$ from \eqref{c10eq:step},
+\begin{equation}
+x(n) = x(0) + n\,d \implies
+\begin{pmatrix} x(0) \\ x(1) \\ x(2) \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 1 & 1 \\ 1 & 2 \end{pmatrix}\begin{pmatrix} x(0) \\ d \end{pmatrix}
+\end{equation}
+The third row gives
+\begin{equation}
+x(2) = x(0) + 2d \implies 2 = -\frac{5}{7} + 2d \implies d = \frac{19}{14}
+\end{equation}
+Then the second row gives
+\begin{equation}
+a = x(1) = x(0) + d = -\frac{5}{7} + \frac{19}{14} = \frac{9}{14}
+\end{equation}
+Hence, the correct option is (B). The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q2.py}}
+\end{center}
+
+
+\item The distance between the points $(0, 0)$ and $(a - b, a + b)$ is
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $2\sqrt{ab}$
+\item $\sqrt{2a^2 + ab}$
+\item $2\sqrt{a^2 + b^2}$
+\item $\sqrt{2a^2 + 2b^2}$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution:} The points are
+\begin{equation}
+\mathbf{O} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \quad
+\mathbf{P} = \begin{pmatrix} a - b \\ a + b \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:dist},
+\begin{equation}
+d^2 = (\mathbf{P} - \mathbf{O})^{\top}(\mathbf{P} - \mathbf{O}) = \begin{pmatrix} a - b & a + b \end{pmatrix}\begin{pmatrix} a - b \\ a + b \end{pmatrix} = (a-b)^2 + (a+b)^2 = 2a^2 + 2b^2
+\end{equation}
+\begin{equation}
+\therefore\ d = \sqrt{2a^2 + 2b^2}
+\end{equation}
+Hence, the correct option is (D). The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q3.py}}
+\end{center}
+
+
+\clearpage
+\item In Fig. \ref{c10fig:q5}, if tangents $PA$ and $PB$ from an external point $P$ to a circle with centre $O$ are inclined to each other at an angle of $80^{\circ}$, then $\angle AOB$ is equal to
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $100^{\circ}$
+\item $60^{\circ}$
+\item $80^{\circ}$
+\item $50^{\circ}$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution:} A tangent is perpendicular to the radius at the point of contact, so by \eqref{c10eq:angle}
+\begin{equation}
+(\mathbf{A} - \mathbf{O})^{\top}(\mathbf{P} - \mathbf{A}) = 0, \quad
+(\mathbf{B} - \mathbf{O})^{\top}(\mathbf{P} - \mathbf{B}) = 0
+\implies \angle OAP = \angle OBP = 90^{\circ}
+\end{equation}
+The angles of quadrilateral $OAPB$ add up to $360^{\circ}$, so
+\begin{equation}
+\angle AOB = 360^{\circ} - 90^{\circ} - 90^{\circ} - 80^{\circ} = 100^{\circ}
+\end{equation}
+Hence, the correct option is (A), as shown in Fig. \ref{c10fig:q5}. The following code verifies this and generates Fig. \ref{c10fig:q5}.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q5.py}}
+\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.45\textwidth]{q5_tangents.png}
+\caption{Tangents $PA$ and $PB$ from $P$ with $\angle APB = 80^{\circ}$}
+\label{c10fig:q5}
+\end{figure}
+
+
+\item The mean and median of a distribution are $10$ and $14$ respectively. The mode of this distribution is
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $6$
+\item $22$
+\item $2$
+\item $20$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution:} The median and mean are
+\begin{equation}
+\begin{pmatrix} \text{Median} \\ \text{Mean} \end{pmatrix} = \begin{pmatrix} 14 \\ 10 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:mode},
+\begin{equation}
+\text{Mode} = \begin{pmatrix} 3 & -2 \end{pmatrix}\begin{pmatrix} 14 \\ 10 \end{pmatrix} = 42 - 20 = 22
+\end{equation}
+Hence, the correct option is (B). The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q6.py}}
+\end{center}
+
+
+\item \textbf{(a)} The value(s) of $k$ for which the quadratic equation $3x^2 - kx + 3 = 0$ has equal roots, is (are)
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $6$
+\item $-6$
+\item $\pm 6$
+\item $9$
+\end{enumerate}
+
+\textbf{(b)} The discriminant of the quadratic equation $3\sqrt{3}\,x^2 + 10x + \sqrt{3} = 0$ is
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $\pm 8$
+\item $8$
+\item $100 - 4\sqrt{3}$
+\item $64$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution (a):} By \eqref{c10eq:disc}, the roots are equal when the discriminant vanishes, where $D$ is a function of $k$:
+\begin{equation}
+D(k) = k^2 - 36 = 0, \quad D'(k) = 2k
+\end{equation}
+Using the Newton-Raphson method \eqref{c10eq:newton},
+\begin{equation}
+k_{n+1} = k_n - \frac{k_n^2 - 36}{2k_n}
+\end{equation}
+Starting from $k_0 = 10$ and $k_0 = -10$,
+\begin{equation}
+\begin{array}{c|ccccc}
+n & 0 & 1 & 2 & 3 & 4 \\ \hline
+k_n & 10 & 6.8 & 6.0471 & 6.0002 & 6.0000 \\
+k_n & -10 & -6.8 & -6.0471 & -6.0002 & -6.0000
+\end{array}
+\end{equation}
+so $k = \pm 6$, as shown in Fig.~\ref{c10fig:q8a}. Hence, the correct option is (C). The following code verifies this and generates the figure.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{q8a_newton.png}
+\caption{$D(k) = k^2 - 36$ with the Newton iterates from $k_0 = 10$ and its zeroes $k = \pm 6$}
+\label{c10fig:q8a}
+\end{figure}
+
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q8a.py}}
+\end{center}
+
+\textbf{Solution (b):} Comparing with $ax^2 + bx + c = 0$,
+\begin{equation}
+\begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} 3\sqrt{3} \\ 10 \\ \sqrt{3} \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:disc}, the discriminant is
+\begin{equation}
+D = b^2 - 4ac = 100 - 4\left(3\sqrt{3}\right)\left(\sqrt{3}\right) = 100 - 36 = 64
+\end{equation}
+Hence, the correct option is (D). The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q8b.py}}
+\end{center}
+
+\clearpage
+\item Two dice are thrown simultaneously. The probability that the sum of two numbers appearing on the top of the dice is less than $12$, is
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+\item $\dfrac{1}{36}$
+\item $\dfrac{35}{36}$
+\item $0$
+\item $1$
+\end{enumerate}
+\hfill (10,2022)
+
+\textbf{Solution:} Let $X$, $Y$ be the numbers on the two dice and $Z = X + Y$ their sum. From \eqref{c10eq:pmfZ}, the pmf of $Z$ is
+\begin{equation}
+\begin{array}{c|ccccccccccc}
+n & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+36\Pr(Z = n) & 1 & 2 & 3 & 4 & 5 & 6 & 5 & 4 & 3 & 2 & 1
+\end{array}
+\end{equation}
+The cdf is $F_Z(k) = \sum_{n \le k}\Pr(Z = n)$. For $7 < k \le 12$, summing the pmf gives
+\begin{equation}
+F_Z(k) = 1 - \frac{(12-k)(13-k)}{72}
+\end{equation}
+Using \eqref{c10eq:cdf},
+\begin{equation}
+\Pr(Z < 12) = F_Z(11) = 1 - \frac{(12-11)(13-11)}{72} = 1 - \frac{1}{36} = \frac{35}{36}
+\end{equation}
+Hence, the correct option is (B). The following code computes the cdf and verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q9.py}}
+\end{center}
+
+
+\clearpage
+\item The value of $m$ which makes the points $(0, 0)$, $(2m, -4)$ and $(3, 6)$ collinear, is \underline{\hspace{1.5cm}}. \hfill (10,2022)
+
+\textbf{Solution:} The points are
+\begin{equation}
+\mathbf{A} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \quad
+\mathbf{B} = \begin{pmatrix} 2m \\ -4 \end{pmatrix}, \quad
+\mathbf{C} = \begin{pmatrix} 3 \\ 6 \end{pmatrix}
+\end{equation}
+For collinear points, by \eqref{c10eq:rank} the matrix below must have rank $1$,
+\begin{equation}
+\begin{pmatrix} \mathbf{B}-\mathbf{A} & \mathbf{C}-\mathbf{A} \end{pmatrix} = \begin{pmatrix} 2m & 3 \\ -4 & 6 \end{pmatrix}
+\xrightarrow{R_1 \leftarrow R_1 + \frac{m}{2}R_2} \begin{pmatrix} 0 & 3 + 3m \\ -4 & 6 \end{pmatrix}
+\end{equation}
+The second row is nonzero, so the rank is $1$ only if the first row is zero,
+\begin{equation}
+3 + 3m = 0 \implies m = -1
+\end{equation}
+For $m = -1$ the points are $\mathbf{B} = \begin{pmatrix} -2 \\ -4 \end{pmatrix}$ and $\mathbf{C} = \begin{pmatrix} 3 \\ 6 \end{pmatrix}$ along with $\mathbf{A}$, which lie on one line as shown in Fig. \ref{c10fig:q14}. The following code verifies this and generates Fig. \ref{c10fig:q14}.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q14.py}}
+\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.45\textwidth]{q14_collinear.png}
+\caption{Collinear points $A$, $B$, $C$ for $m = -1$}
+\label{c10fig:q14}
+\end{figure}
+
+
+\clearpage
+\item If $\alpha$, $\beta$ are zeroes of the polynomial $2x^2 - 5x - 4$, then $\dfrac{1}{\alpha} + \dfrac{1}{\beta} = $ \underline{\hspace{1.5cm}}. \hfill (10,2022)
+
+\textbf{Solution:} Let $f(x) = 2x^2 - 5x - 4$, so $f'(x) = 4x - 5$. Using the Newton-Raphson method \eqref{c10eq:newton},
+\begin{equation}
+x_{n+1} = x_n - \frac{2x_n^2 - 5x_n - 4}{4x_n - 5}
+\end{equation}
+Starting from $x_0 = 4$ and $x_0 = -2$,
+\begin{equation}
+\begin{array}{c|ccccc}
+n & 0 & 1 & 2 & 3 & 4 \\ \hline
+x_n & 4 & 3.2727 & 3.1420 & 3.1375 & 3.1375 \\
+x_n & -2 & -0.9231 & -0.6562 & -0.6376 & -0.6375
+\end{array}
+\end{equation}
+so the zeroes are $\alpha \approx 3.1375$ and $\beta \approx -0.6375$, as shown in Fig. \ref{c10fig:q15}. Therefore
+\begin{equation}
+\frac{1}{\alpha} + \frac{1}{\beta} \approx 0.3187 - 1.5687 = -1.25 = -\frac{5}{4}
+\end{equation}
+The following code computes the zeroes and generates Fig. \ref{c10fig:q15}.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q15.py}}
+\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{q15_newton.png}
+\caption{Zeroes of $y = 2x^2 - 5x - 4$ and the Newton iterates}
+\label{c10fig:q15}
+\end{figure}
+
+
+\clearpage
+\item A circle has its centre at $(4, 4)$. If one end of a diameter is $(4, 0)$, then find the coordinates of the other end. \hfill (10,2022)
+
+\textbf{Solution:} Let the centre be $\mathbf{O}$ and the given end of the diameter be $\mathbf{P}$,
+\begin{equation}
+\mathbf{O} = \begin{pmatrix} 4 \\ 4 \end{pmatrix}, \quad
+\mathbf{P} = \begin{pmatrix} 4 \\ 0 \end{pmatrix}
+\end{equation}
+The centre is the midpoint of the diameter, so by \eqref{c10eq:diam} the other end $\mathbf{Q}$ is
+\begin{equation}
+\mathbf{Q} = 2\mathbf{O} - \mathbf{P} = \begin{pmatrix} 8 \\ 8 \end{pmatrix} - \begin{pmatrix} 4 \\ 0 \end{pmatrix} = \begin{pmatrix} 4 \\ 8 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:dist}, the radius and the diameter are
+\begin{equation}
+\|\mathbf{P} - \mathbf{O}\| = \left\| \begin{pmatrix} 0 \\ -4 \end{pmatrix} \right\| = 4, \quad
+\|\mathbf{Q} - \mathbf{O}\| = \left\| \begin{pmatrix} 0 \\ 4 \end{pmatrix} \right\| = 4, \quad
+\|\mathbf{Q} - \mathbf{P}\| = \left\| \begin{pmatrix} 0 \\ 8 \end{pmatrix} \right\| = 8
+\end{equation}
+so $\mathbf{Q}$ lies on the circle and $PQ$ is its diameter, as shown in Fig. \ref{c10fig:q17}. The other end of the diameter is $(4, 8)$. The following code verifies this and generates Fig. \ref{c10fig:q17}.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q17.py}}
+\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{q17_diameter.png}
+\caption{Circle with centre $O$ and diameter $PQ$}
+\label{c10fig:q17}
+\end{figure}
+
+
+\item If two positive integers $p$ and $q$ can be expressed as $p = ab^3$ and $q = a^2b$; $a$ and $b$ being prime numbers, then find LCM $(p, q)$. \hfill (10,2022)
+
+\textbf{Solution:} Writing the exponents of the primes $(a, b)$ as vectors,
+\begin{equation}
+\mathbf{e}_p = \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \quad
+\mathbf{e}_q = \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:lcm},
+\begin{equation}
+\mathbf{e}_{\text{LCM}} = \max\left(\begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 1 \end{pmatrix}\right) = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+\end{equation}
+\begin{equation}
+\therefore\ \text{LCM}(p, q) = a^2b^3
+\end{equation}
+The following C code computes the LCM for $a = 2$, $b = 3$ and compares it with $a^2b^3$.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q18.c}}
+\end{center}
+
+
+\clearpage
+\item Solve $9x^2 - 6a^2x + a^4 - b^4 = 0$ using quadratic formula. \hfill (10,2022)
+
+\textbf{Solution:} The coefficients of $Ax^2 + Bx + C = 0$ are
+\begin{equation}
+\begin{pmatrix} A \\ B \\ C \end{pmatrix} = \begin{pmatrix} 9 \\ -6a^2 \\ a^4 - b^4 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:quadf}, the discriminant is
+\begin{equation}
+D = B^2 - 4AC = 36a^4 - 36\left(a^4 - b^4\right) = 36b^4
+\end{equation}
+\begin{equation}
+x = \frac{6a^2 \pm 6b^2}{18} \implies x = \frac{a^2 + b^2}{3}, \ \frac{a^2 - b^2}{3}
+\end{equation}
+To check this with the Newton-Raphson method \eqref{c10eq:newton}, take $a = 2$, $b = 1$, so $f(x) = 9x^2 - 24x + 15$ and $f'(x) = 18x - 24$,
+\begin{equation}
+x_{n+1} = x_n - \frac{9x_n^2 - 24x_n + 15}{18x_n - 24}
+\end{equation}
+Starting on each side of the vertex $x = \dfrac{4}{3}$, from $x_0 = 3$ and $x_0 = 0$,
+\begin{equation}
+\begin{array}{c|cccccc}
+n & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+x_n & 3 & 2.2 & 1.8308 & 1.6937 & 1.6677 & 1.6667 \\
+x_n & 0 & 0.625 & 0.9007 & 0.9886 & 0.9998 & 1.0000
+\end{array}
+\end{equation}
+which gives $x = \dfrac{5}{3}$ and $x = 1$, as shown in Fig. \ref{c10fig:q23}. These agree with $\dfrac{a^2 \pm b^2}{3} = \dfrac{4 \pm 1}{3}$. The following code verifies this and generates Fig. \ref{c10fig:q23}.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q23.py}}
+\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{q23_newton.png}
+\caption{Roots of $9x^2 - 6a^2x + a^4 - b^4 = 0$ for $a = 2$, $b = 1$ by Newton-Raphson}
+\label{c10fig:q23}
+\end{figure}
+
+
+\clearpage
+\item \textbf{(a)} A jar contains 18 marbles. Some are red and others are yellow. If a marble is drawn at random from the jar, the probability that it is red is $\dfrac{2}{3}$. Find the number of yellow marbles in the jar.
+
+\textbf{(b)} A die is thrown twice. What is the probability that (i) 5 will come up at least once, and (ii) 5 will not come up either time? \hfill (10,2022)
+
+\textbf{Solution (a):} By \eqref{c10eq:prob}, the probabilities of drawing a red and a yellow marble form the vector
+\begin{equation}
+\begin{pmatrix} \Pr(\text{red}) \\ \Pr(\text{yellow}) \end{pmatrix} = \begin{pmatrix} \frac{2}{3} \\ 1 - \frac{2}{3} \end{pmatrix} = \begin{pmatrix} \frac{2}{3} \\ \frac{1}{3} \end{pmatrix}
+\end{equation}
+The number of marbles of each colour is $18$ times this vector,
+\begin{equation}
+\begin{pmatrix} \text{red} \\ \text{yellow} \end{pmatrix} = 18\begin{pmatrix} \frac{2}{3} \\ \frac{1}{3} \end{pmatrix} = \begin{pmatrix} 12 \\ 6 \end{pmatrix}
+\end{equation}
+Hence, there are $6$ yellow marbles.
+
+The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q24a.py}}
+\end{center}
+
+\textbf{Solution (b):} Getting a $5$ is a success, with $s = \dfrac{1}{6}$. Let $X$ be the number of $5$s in the two throws. By \eqref{c10eq:twotrials},
+\begin{equation}
+\mathbf{p}_X = \begin{pmatrix} \left(\frac{5}{6}\right)^2 \\ 2\cdot\frac{1}{6}\cdot\frac{5}{6} \\ \left(\frac{1}{6}\right)^2 \end{pmatrix} = \frac{1}{36}\begin{pmatrix} 25 \\ 10 \\ 1 \end{pmatrix}
+\end{equation}
+(i) $5$ comes up at least once, using \eqref{c10eq:prob},
+\begin{equation}
+\Pr(X \ge 1) = 1 - \Pr(X = 0) = 1 - \frac{25}{36} = \frac{11}{36}
+\end{equation}
+(ii) $5$ does not come up either time,
+\begin{equation}
+\Pr(X = 0) = \frac{25}{36}
+\end{equation}
+The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q24b.py}}
+\end{center}
+
+\item Find mode of the following distribution:
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Class: & 25--30 & 30--35 & 35--40 & 40--45 & 45--50 & 50--55 \\ \hline
+Frequency: & 20 & 36 & 53 & 40 & 28 & 14 \\ \hline
+\end{tabular}
+\end{center}
+\hfill (10,2022)
+
+\textbf{Solution:} The largest frequency is $53$, so the modal class is $35$--$40$. Then
+\begin{equation}
+l = 35, \quad h = 5, \quad
+\mathbf{f} = \begin{pmatrix} f_0 \\ f_1 \\ f_2 \end{pmatrix} = \begin{pmatrix} 36 \\ 53 \\ 40 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:modegrouped},
+\begin{equation}
+\begin{pmatrix} -1 & 1 & 0 \end{pmatrix}\mathbf{f} = 17, \quad
+\begin{pmatrix} -1 & 2 & -1 \end{pmatrix}\mathbf{f} = -36 + 106 - 40 = 30
+\end{equation}
+\begin{equation}
+\text{Mode} = 35 + 5 \times \frac{17}{30} = 35 + 2.83 = 37.83
+\end{equation}
+The following C code computes this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q26.c}}
+\end{center}
+
+
+\clearpage
+\item \textbf{(a)} Find the area of the quadrilateral $ABCD$ whose vertices are $A(-4, -3)$, $B(3, -1)$, $C(0, 5)$ and $D(-4, 2)$.
+
+\textbf{(b)} If the points $A(2, 0)$, $B(6, 1)$ and $C(p, q)$ form a triangle of area $12$ sq. units (positive only) and $2p + q = 10$, then find the values of $p$ and $q$. \hfill (10,2022)
+
+\textbf{Solution (a):} The vertices are
+\begin{equation}
+\mathbf{A} = \begin{pmatrix} -4 \\ -3 \end{pmatrix}, \quad
+\mathbf{B} = \begin{pmatrix} 3 \\ -1 \end{pmatrix}, \quad
+\mathbf{C} = \begin{pmatrix} 0 \\ 5 \end{pmatrix}, \quad
+\mathbf{D} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}
+\end{equation}
+Splitting along the diagonal $AC$, the side vectors from $\mathbf{A}$ are
+\begin{equation}
+\mathbf{B} - \mathbf{A} = \begin{pmatrix} 7 \\ 2 \end{pmatrix}, \quad
+\mathbf{C} - \mathbf{A} = \begin{pmatrix} 4 \\ 8 \end{pmatrix}, \quad
+\mathbf{D} - \mathbf{A} = \begin{pmatrix} 0 \\ 5 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:crossarea},
+\begin{equation}
+\text{ar}(\triangle ABC) = \frac{1}{2}\left|(7)(8) - (2)(4)\right| = 24, \quad
+\text{ar}(\triangle ACD) = \frac{1}{2}\left|(4)(5) - (8)(0)\right| = 10
+\end{equation}
+\begin{equation}
+\therefore\ \text{ar}(ABCD) = 24 + 10 = 34 \text{ sq. units}
+\end{equation}
+
+The quadrilateral and the diagonal $AC$ are shown in Fig.~\ref{c10fig:q28a}. The following code verifies this and generates the figure.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.45\textwidth]{q28a_quad.png}
+\caption{Quadrilateral $ABCD$ split by the diagonal $AC$}
+\label{c10fig:q28a}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q28a.py}}
+\end{center}
+
+\textbf{Solution (b):} The side vectors from $\mathbf{A}$ are
+\begin{equation}
+\mathbf{B} - \mathbf{A} = \begin{pmatrix} 4 \\ 1 \end{pmatrix}, \quad
+\mathbf{C} - \mathbf{A} = \begin{pmatrix} p - 2 \\ q \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:crossarea} with the area equal to $12$,
+\begin{equation}
+\frac{1}{2}\left|\begin{vmatrix} 4 & p - 2 \\ 1 & q \end{vmatrix}\right| = 12 \implies
+\begin{vmatrix} 4 & p - 2 \\ 1 & q \end{vmatrix} = \pm 24 \implies
+\begin{pmatrix} -1 & 4 \end{pmatrix}\begin{pmatrix} p \\ q \end{pmatrix} = \pm 24 - 2
+\end{equation}
+Writing $2p + q = 10$ as $\begin{pmatrix} 2 & 1 \end{pmatrix}\begin{pmatrix} p \\ q \end{pmatrix} = 10$ and stacking the two rows, with $c = 22$ or $-26$,
+\begin{equation}
+\begin{pmatrix} 2 & 1 \\ -1 & 4 \end{pmatrix}\begin{pmatrix} p \\ q \end{pmatrix} = \begin{pmatrix} 10 \\ c \end{pmatrix}
+\end{equation}
+The determinant is $9$, so the inverse exists and
+\begin{equation}
+\begin{pmatrix} p \\ q \end{pmatrix} = \frac{1}{9}\begin{pmatrix} 4 & -1 \\ 1 & 2 \end{pmatrix}\begin{pmatrix} 10 \\ c \end{pmatrix}
+\end{equation}
+\begin{equation}
+c = 22: \ \begin{pmatrix} p \\ q \end{pmatrix} = \begin{pmatrix} 2 \\ 6 \end{pmatrix}, \qquad
+c = -26: \ \begin{pmatrix} p \\ q \end{pmatrix} = \begin{pmatrix} \frac{22}{3} \\ -\frac{14}{3} \end{pmatrix}
+\end{equation}
+Hence, $(p, q) = (2, 6)$ or $\left(\dfrac{22}{3}, -\dfrac{14}{3}\right)$. The two triangles, one for each solution, lie on the line $2p + q = 10$ as shown in Fig.~\ref{c10fig:q28b}. The following code verifies this and generates the figure.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.45\textwidth]{q28b_tri.png}
+\caption{Triangles $ABC_1$ and $ABC_2$ of area $12$ sq. units, with $C_1(2, 6)$ and $C_2\left(\frac{22}{3}, -\frac{14}{3}\right)$}
+\label{c10fig:q28b}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q28b.py}}
+\end{center}
+
+\clearpage
+\item \textbf{(a)} Solve the equations $x + 2y = 6$ and $2x - 5y = 12$ graphically.
+
+\textbf{(b)} Solve the following equations for $x$ and $y$ using Gauss elimination:
+\[ (ax - by) + (a + 4b) = 0, \qquad (bx + ay) + (b - 4a) = 0 \]
+\hfill (10,2022)
+
+\textbf{Solution (a):} In matrix form the two equations are
+\begin{equation}
+\begin{pmatrix} 1 & 2 \\ 2 & -5 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 6 \\ 12 \end{pmatrix}
+\end{equation}
+Applying Gauss elimination to the augmented matrix,
+\begin{equation}
+\left(\begin{array}{cc|c} 1 & 2 & 6 \\ 2 & -5 & 12 \end{array}\right)
+\xrightarrow{R_2 \leftarrow R_2 - 2R_1}
+\left(\begin{array}{cc|c} 1 & 2 & 6 \\ 0 & -9 & 0 \end{array}\right)
+\xrightarrow{R_2 \leftarrow -R_2/9}
+\left(\begin{array}{cc|c} 1 & 2 & 6 \\ 0 & 1 & 0 \end{array}\right)
+\end{equation}
+\begin{equation}
+\xrightarrow{R_1 \leftarrow R_1 - 2R_2}
+\left(\begin{array}{cc|c} 1 & 0 & 6 \\ 0 & 1 & 0 \end{array}\right)
+\implies \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 6 \\ 0 \end{pmatrix}
+\end{equation}
+The two lines $\mathbf{n}_1^{\top}\mathbf{x} = 6$ and $\mathbf{n}_2^{\top}\mathbf{x} = 12$, with $\mathbf{n}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{n}_2 = \begin{pmatrix} 2 \\ -5 \end{pmatrix}$, are drawn in Fig.~\ref{c10fig:q30} and meet at the point
+\begin{equation}
+\mathbf{x} = \begin{pmatrix} 6 \\ 0 \end{pmatrix}
+\end{equation}
+Hence, $x = 6$, $y = 0$. The following code verifies this and generates Fig.~\ref{c10fig:q30}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{q30_lines.png}
+\caption{The lines $\mathbf{n}_1^{\top}\mathbf{x} = 6$ and $\mathbf{n}_2^{\top}\mathbf{x} = 12$ meet at $(6, 0)$}
+\label{c10fig:q30}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q30a.py}}
+\end{center}
+
+\textbf{Solution (b):} The augmented matrix of the system
+\begin{equation}
+\begin{pmatrix} a & -b \\ b & a \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -(a + 4b) \\ -(b - 4a) \end{pmatrix}
+\end{equation}
+is, with $a^2 + b^2 \ne 0$ so that the pivots below are non-zero,
+\begin{equation}
+\left(\begin{array}{cc|c} a & -b & -(a + 4b) \\ b & a & 4a - b \end{array}\right)
+\xrightarrow[R_2 \leftarrow aR_2 - bR_1]{R_1 \leftarrow aR_1 + bR_2}
+\left(\begin{array}{cc|c} a^2 + b^2 & 0 & -(a^2 + b^2) \\ 0 & a^2 + b^2 & 4(a^2 + b^2) \end{array}\right)
+\end{equation}
+Dividing both rows by $a^2 + b^2$,
+\begin{equation}
+\left(\begin{array}{cc|c} 1 & 0 & -1 \\ 0 & 1 & 4 \end{array}\right)
+\implies \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -1 \\ 4 \end{pmatrix}
+\end{equation}
+Hence, $x = -1$, $y = 4$. The following code verifies this for several values of $a$ and $b$.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q30b.py}}
+\end{center}
+
+\clearpage
+\item Draw a circle of radius $2.5$ cm. Take a point $P$ outside the circle at a distance of $7$ cm from the centre. Then construct a pair of tangents to the circle from point $P$. \hfill (10,2022)
+
+\textbf{Solution:} Take the centre at the origin and $P$ on the $x$-axis,
+\begin{equation}
+\mathbf{O} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \quad \mathbf{P} = \begin{pmatrix} 7 \\ 0 \end{pmatrix}, \quad r = 2.5
+\end{equation}
+Then $\mathbf{w} = \mathbf{P} - \mathbf{O}$ and $g = \mathbf{w}^{\top}\mathbf{w} - r^2$ are
+\begin{equation}
+\mathbf{w} = \begin{pmatrix} 7 \\ 0 \end{pmatrix}, \quad g = 49 - 6.25 = 42.75
+\end{equation}
+The matrix in \eqref{c10eq:tangm} is
+\begin{equation}
+\mathbf{M} = \mathbf{w}\mathbf{w}^{\top} - g\mathbf{I} = \begin{pmatrix} 49 & 0 \\ 0 & 0 \end{pmatrix} - 42.75\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 6.25 & 0 \\ 0 & -42.75 \end{pmatrix}
+\end{equation}
+Its eigenvalues and eigenvectors, which are the columns of $\mathbf{U}$, are
+\begin{equation}
+\lambda_1 = 6.25, \ \lambda_2 = -42.75, \qquad \mathbf{U} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+\end{equation}
+By \eqref{c10eq:tangdir}, the directions of the two tangents are
+\begin{equation}
+\mathbf{m} \propto \begin{pmatrix} \sqrt{42.75} \\ \pm 2.5 \end{pmatrix} \approx \begin{pmatrix} 6.54 \\ \pm 2.5 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:tangpt} with $\mathbf{m}^{\top}\mathbf{w} = 7\sqrt{42.75}$ and $\mathbf{m}^{\top}\mathbf{m} = 49$, the points of contact are
+\begin{equation}
+\mathbf{T}_1 = \begin{pmatrix} 0.89 \\ -2.34 \end{pmatrix}, \quad \mathbf{T}_2 = \begin{pmatrix} 0.89 \\ 2.34 \end{pmatrix}
+\end{equation}
+Each satisfies $\left(\mathbf{T} - \mathbf{O}\right)^{\top}\left(\mathbf{T} - \mathbf{P}\right) = 0$ and has $\|\mathbf{T} - \mathbf{O}\| = 2.5$, and the length of each tangent is
+\begin{equation}
+\|\mathbf{P} - \mathbf{T}\| = \sqrt{g} = \sqrt{42.75} \approx 6.54 \text{ cm}
+\end{equation}
+Drawing the circle, joining $\mathbf{P}$ to $\mathbf{T}_1$ and $\mathbf{T}_2$ gives the required pair of tangents in Fig.~\ref{c10fig:q31}. The following code verifies this and generates Fig.~\ref{c10fig:q31}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{q31_tangents.png}
+\caption{Tangents $PT_1$ and $PT_2$ from $P$ to the circle of radius $2.5$ cm}
+\label{c10fig:q31}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q31.py}}
+\end{center}
+
+\clearpage
+\item \textbf{(a)} Find the sum of first $16$ terms of an Arithmetic Progression whose $4$th and $9$th terms are $-15$ and $-30$ respectively.
+
+\textbf{(b)} If the sum of first $14$ terms of an Arithmetic Progression is $1050$ and its fourth term is $40$, find its $20$th term. \hfill (10,2022)
+
+\textbf{Solution (a):} The $4$th and $9$th terms are $x(3)$ and $x(8)$. By \eqref{c10eq:ap}, for $n \ge 0$, so that $u(n) = 1$ from \eqref{c10eq:step},
+\begin{equation}
+\begin{pmatrix} x(3) \\ x(8) \end{pmatrix} = \begin{pmatrix} 1 & 3 \\ 1 & 8 \end{pmatrix}\begin{pmatrix} x(0) \\ d \end{pmatrix} = \begin{pmatrix} -15 \\ -30 \end{pmatrix}
+\end{equation}
+The determinant is $5$, so
+\begin{equation}
+\begin{pmatrix} x(0) \\ d \end{pmatrix} = \frac{1}{5}\begin{pmatrix} 8 & -3 \\ -1 & 1 \end{pmatrix}\begin{pmatrix} -15 \\ -30 \end{pmatrix} = \begin{pmatrix} -6 \\ -3 \end{pmatrix}
+\end{equation}
+Using \eqref{c10eq:apsum} with $N = 16$,
+\begin{equation}
+S_{16} = \begin{pmatrix} 16 & 120 \end{pmatrix}\begin{pmatrix} -6 \\ -3 \end{pmatrix} = -96 - 360 = -456
+\end{equation}
+Hence, the sum of the first $16$ terms is $-456$. The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q34a.py}}
+\end{center}
+
+\textbf{Solution (b):} The sum of the first $14$ terms is $S_{14}$ and the fourth term is $x(3)$. Using \eqref{c10eq:apsum} with $N = 14$ and \eqref{c10eq:ap},
+\begin{equation}
+\begin{pmatrix} 14 & 91 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} x(0) \\ d \end{pmatrix} = \begin{pmatrix} 1050 \\ 40 \end{pmatrix}
+\end{equation}
+The determinant is $42 - 91 = -49$, so
+\begin{equation}
+\begin{pmatrix} x(0) \\ d \end{pmatrix} = \frac{1}{-49}\begin{pmatrix} 3 & -91 \\ -1 & 14 \end{pmatrix}\begin{pmatrix} 1050 \\ 40 \end{pmatrix} = \begin{pmatrix} 10 \\ 10 \end{pmatrix}
+\end{equation}
+The $20$th term is $x(19)$, and by \eqref{c10eq:ap},
+\begin{equation}
+x(19) = \begin{pmatrix} 1 & 19 \end{pmatrix}\begin{pmatrix} 10 \\ 10 \end{pmatrix} = 10 + 190 = 200
+\end{equation}
+Hence, the $20$th term is $200$. The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q34b.py}}
+\end{center}
+
+\clearpage
+\item $A$ and $B$ jointly finish a piece of work in $15$ days. When they work separately, $A$ takes $16$ days less than the number of days taken by $B$ to finish the same piece of work. Find the number of days taken by $B$ to finish the work. \hfill (10,2022)
+
+\textbf{Solution:} Let $B$ take $x$ days, so that $A$ takes $x - 16$ days. The work done per day by $A$ and $B$ form the vector
+\begin{equation}
+\mathbf{r} = \begin{pmatrix} \dfrac{1}{x - 16} \\[2mm] \dfrac{1}{x} \end{pmatrix}
+\end{equation}
+Together they finish the work in $15$ days, so their combined rate is $\dfrac{1}{15}$,
+\begin{equation}
+\begin{pmatrix} 1 & 1 \end{pmatrix}\mathbf{r} = \frac{1}{x - 16} + \frac{1}{x} = \frac{1}{15}
+\end{equation}
+Cross-multiplying,
+\begin{equation}
+15\left(2x - 16\right) = x\left(x - 16\right) \implies x^2 - 46x + 240 = 0
+\end{equation}
+The roots of the quadratic are the zeroes of
+\begin{equation}
+f(x) = x^2 - 46x + 240, \quad f'(x) = 2x - 46
+\end{equation}
+Using the Newton-Raphson method \eqref{c10eq:newton},
+\begin{equation}
+x_{n+1} = x_n - \frac{x_n^2 - 46x_n + 240}{2x_n - 46}
+\end{equation}
+Starting from $x_0 = 50$ and $x_0 = 0$,
+\begin{equation}
+\begin{array}{c|ccccc}
+n & 0 & 1 & 2 & 3 & 4 \\ \hline
+x_n & 50 & 41.8519 & 40.0910 & 40.0002 & 40.0000 \\
+x_n & 0 & 5.2174 & 5.9828 & 6.0000 & 6.0000
+\end{array}
+\end{equation}
+so $x = 40$ or $x = 6$, as shown in Fig.~\ref{c10fig:q38}. Since $A$ takes $x - 16$ days, which must be positive, $x = 6$ is rejected. Hence, $B$ takes $40$ days (and $A$ takes $24$ days). The following code verifies this and generates Fig.~\ref{c10fig:q38}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.55\textwidth]{q38_quad.png}
+\caption{$f(x) = x^2 - 46x + 240$ with the Newton iterates from $x_0 = 50$ and its zeroes $x = 6$ and $x = 40$}
+\label{c10fig:q38}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q38.py}}
+\end{center}
+
+\clearpage
+\item \textbf{(a)} If the polynomial $f(x) = 3x^4 - 9x^3 + x^2 + 15x + k$ is completely divisible by $3x^2 - 5$, then find the value of $k$. Using the quotient, so obtained, find two zeroes of the polynomial.
+
+\textbf{(b)} Find all the zeroes of the polynomial $x^4 - 8x^3 + 23x^2 - 28x + 12$ if two of its zeroes are $2$ and $3$. \hfill (10,2022)
+
+\textbf{Solution (a):} Since $f(x)$ is completely divisible by $3x^2 - 5$, by \eqref{c10eq:divalg} with $r(x) = 0$ the quotient is a quadratic, so
+\begin{equation}
+3x^4 - 9x^3 + x^2 + 15x + k = \left(3x^2 - 5\right)\left(x^2 + bx + c\right)
+\end{equation}
+Expanding the right side,
+\begin{equation}
+3x^4 - 9x^3 + x^2 + 15x + k = 3x^4 + 3b\,x^3 + \left(3c - 5\right)x^2 - 5b\,x - 5c
+\end{equation}
+Comparing the coefficients of like powers of $x$,
+\begin{equation}
+x^3: \ 3b = -9, \qquad x^2: \ 3c - 5 = 1, \qquad x: \ -5b = 15, \qquad x^0: \ -5c = k
+\end{equation}
+The first two give $b = -3$ and $c = 2$ (the third is then also satisfied), and the last gives
+\begin{equation}
+k = -5c = -10
+\end{equation}
+Hence, the quotient is $x^2 - 3x + 2$ and $k = -10$.
+
+The quotient is $q(x) = x^2 - 3x + 2$. Its zeroes are found by the Newton-Raphson method \eqref{c10eq:newton} with $q'(x) = 2x - 3$,
+\begin{equation}
+x_{n+1} = x_n - \frac{x_n^2 - 3x_n + 2}{2x_n - 3}
+\end{equation}
+Starting from $x_0 = 5$ and $x_0 = 0$,
+\begin{equation}
+\begin{array}{c|cccccc}
+n & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+x_n & 5 & 3.2857 & 2.4629 & 2.1113 & 2.0101 & 2.0001 \\
+x_n & 0 & 0.6667 & 0.9333 & 0.9961 & 1.0000 & 1.0000
+\end{array}
+\end{equation}
+Hence, $k = -10$ and two zeroes of the polynomial are $x = 2$ and $x = 1$, as shown in Fig.~\ref{c10fig:q39a}. The following code verifies this and generates Fig.~\ref{c10fig:q39a}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{q39a_quotient.png}
+\caption{$q(x) = x^2 - 3x + 2$ with the Newton iterates from $x_0 = 5$ and its zeroes $x = 1$ and $x = 2$}
+\label{c10fig:q39a}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q39a.py}}
+\end{center}
+
+\textbf{Solution (b):} Since $2$ and $3$ are zeroes, $(x - 2)$ and $(x - 3)$ are factors, so the polynomial is divisible by
+\begin{equation}
+(x - 2)(x - 3) = x^2 - 5x + 6
+\end{equation}
+and the quotient is a quadratic,
+\begin{equation}
+x^4 - 8x^3 + 23x^2 - 28x + 12 = \left(x^2 - 5x + 6\right)\left(x^2 + bx + c\right)
+\end{equation}
+Expanding the right side,
+\begin{equation}
+x^4 - 8x^3 + 23x^2 - 28x + 12 = x^4 + (b - 5)x^3 + \left(c - 5b + 6\right)x^2 + \left(6b - 5c\right)x + 6c
+\end{equation}
+Comparing the coefficients of like powers of $x$,
+\begin{equation}
+x^3: \ b - 5 = -8, \qquad x^2: \ c - 5b + 6 = 23, \qquad x: \ 6b - 5c = -28, \qquad x^0: \ 6c = 12
+\end{equation}
+The first gives $b = -3$, then the second gives $c = 2$, and the last two are also satisfied. So the quotient is $q(x) = x^2 - 3x + 2$ and the polynomial equals $(x - 2)(x - 3)\,q(x)$. The other two zeroes are the zeroes of $q(x)$, which the Newton-Raphson method \eqref{c10eq:newton} gave in part (a) as $x = 1$ and $x = 2$. Hence, all the zeroes are
+\begin{equation}
+x = 1, \ 2, \ 2, \ 3
+\end{equation}
+with $x = 2$ occurring twice, as shown in Fig.~\ref{c10fig:q39b}. The following code verifies this and generates Fig.~\ref{c10fig:q39b}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{q39b_quartic.png}
+\caption{$x^4 - 8x^3 + 23x^2 - 28x + 12$ with zeroes at $x = 1, 2, 3$ ($x = 2$ twice)}
+\label{c10fig:q39b}
+\end{figure}
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q39b.py}}
+\end{center}
+
+\clearpage
+\item Draw `less than' ogive for the following distribution and hence find its median.
+\begin{center}
+\begin{tabular}{c|ccccccc}
+Class & 20--30 & 30--40 & 40--50 & 50--60 & 60--70 & 70--80 & 80--90 \\ \hline
+Frequency & 10 & 8 & 12 & 24 & 6 & 25 & 15
+\end{tabular}
+\end{center}
+\hfill (10,2022)
+
+\textbf{Solution:} The cumulative frequency up to the upper limit of each class is, by \eqref{c10eq:cumfreq},
+\begin{center}
+\begin{tabular}{c|ccccccc}
+Upper limit $u_i$ & 30 & 40 & 50 & 60 & 70 & 80 & 90 \\ \hline
+$F_i$ & 10 & 18 & 30 & 54 & 60 & 85 & 100
+\end{tabular}
+\end{center}
+so $N = 100$ and $\dfrac{N}{2} = 50$. Since $30 < 50 \le 54$, the median class is $50$--$60$, with
+\begin{equation}
+l = 50, \quad h = 10, \quad f = 24, \quad F_{\text{prev}} = 30
+\end{equation}
+Using \eqref{c10eq:mediangrouped},
+\begin{equation}
+\text{Median} = 50 + \frac{50 - 30}{24} \times 10 = 50 + 8.33 = 58.33
+\end{equation}
+Hence, the median is $58.33$. The following code verifies this.
+
+\nopagebreak[4]
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering 10/codes/q40.py}}
+\end{center}

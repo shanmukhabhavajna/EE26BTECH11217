@@ -1,0 +1,149 @@
+\item The unit \emph{step function} is
+\begin{equation}
+u(n) = \begin{cases} 1, & n \ge 0 \\ 0, & n < 0 \end{cases}
+\label{c10eq:step}
+\end{equation}
+
+\item An arithmetic progression with first term $x(0)$ and common difference $d$ can be written using the step function as
+\begin{equation}
+x(n) = \left(x(0) + n\,d\right)u(n), \quad x(n+1) - x(n) = d, \ n \ge 0
+\label{c10eq:ap}
+\end{equation}
+
+\item The distance between the points $\mathbf{A}$ and $\mathbf{B}$ is the norm of the vector joining them,
+\begin{equation}
+d = \|\mathbf{A} - \mathbf{B}\| = \sqrt{(\mathbf{A} - \mathbf{B})^{\top}(\mathbf{A} - \mathbf{B})}
+\label{c10eq:dist}
+\end{equation}
+
+\item The angle $\theta$ between vectors $\mathbf{a}$ and $\mathbf{b}$ satisfies
+\begin{equation}
+\cos\theta = \frac{\mathbf{a}^{\top}\mathbf{b}}{\|\mathbf{a}\|\,\|\mathbf{b}\|}, \quad
+\mathbf{a} \perp \mathbf{b} \iff \mathbf{a}^{\top}\mathbf{b} = 0
+\label{c10eq:angle}
+\end{equation}
+The tangent at a point $\mathbf{A}$ of a circle with centre $\mathbf{O}$ is perpendicular to the radius $\mathbf{A}-\mathbf{O}$. The angles of a quadrilateral add up to $360^{\circ}$.
+
+\item For a moderately skewed distribution, the empirical relation between the mode, median and mean is
+\begin{equation}
+\text{Mode} = 3\,\text{Median} - 2\,\text{Mean} = \begin{pmatrix} 3 & -2 \end{pmatrix}\begin{pmatrix} \text{Median} \\ \text{Mean} \end{pmatrix}
+\label{c10eq:mode}
+\end{equation}
+
+\item The \emph{Newton-Raphson method} finds a root of $f(x) = 0$ from an initial guess $x_0$ using
+\begin{equation}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\label{c10eq:newton}
+\end{equation}
+
+\item For the quadratic equation $ax^2 + bx + c = 0$, the discriminant is $D = b^2 - 4ac$. 
+\begin{equation}
+D = b^2 - 4ac, \quad \text{equal roots} \iff D = 0
+\label{c10eq:disc}
+\end{equation}
+
+\item If $X$ and $Y$ are the numbers on two dice and $Z = X + Y$, then, as the 36 outcomes are equally likely,
+\begin{equation}
+\Pr(Z = n) = \begin{cases} \dfrac{n-1}{36}, & 2 \le n \le 7 \\[2mm] \dfrac{13-n}{36}, & 7 < n \le 12 \\[2mm] 0, & \text{otherwise} \end{cases}
+\label{c10eq:pmfZ}
+\end{equation}
+
+\item The \emph{cumulative distribution function} (cdf) of $Z$ is $F_Z(k) = \Pr(Z \le k) = \sum_{n \le k}\Pr(Z = n)$. Since $Z$ takes integer values,
+\begin{equation}
+\Pr(Z < k) = F_Z(k-1), \quad \Pr(Z \ge k) = 1 - F_Z(k-1)
+\label{c10eq:cdf}
+\end{equation}
+
+\item The points $\mathbf{A}, \mathbf{B}, \mathbf{C}$ are collinear if and only if the vectors $\mathbf{B}-\mathbf{A}$ and $\mathbf{C}-\mathbf{A}$ are parallel, that is,
+\begin{equation}
+\text{rank}\begin{pmatrix} \mathbf{B}-\mathbf{A} & \mathbf{C}-\mathbf{A} \end{pmatrix} = 1
+\label{c10eq:rank}
+\end{equation}
+The rank is the number of nonzero rows left after row reduction.
+
+\item The centre $\mathbf{O}$ of a circle is the midpoint of every diameter $PQ$, so
+\begin{equation}
+\mathbf{O} = \frac{\mathbf{P} + \mathbf{Q}}{2} \implies \mathbf{Q} = 2\mathbf{O} - \mathbf{P}, \quad
+\|\mathbf{P} - \mathbf{O}\| = \|\mathbf{Q} - \mathbf{O}\| = r
+\label{c10eq:diam}
+\end{equation}
+
+\item If two numbers are written as products of primes $\mathbf{r} = \begin{pmatrix} r_1 & r_2 \end{pmatrix}$, with exponent vectors $\mathbf{e}_p, \mathbf{e}_q$, then the LCM and HCF have exponent vectors given by the componentwise maximum and minimum,
+\begin{equation}
+\mathbf{e}_{\text{LCM}} = \max\left(\mathbf{e}_p, \mathbf{e}_q\right), \quad
+\mathbf{e}_{\text{HCF}} = \min\left(\mathbf{e}_p, \mathbf{e}_q\right), \quad
+pq = \text{LCM}\times\text{HCF}
+\label{c10eq:lcm}
+\end{equation}
+
+\item The \emph{quadratic formula}: the roots of $Ax^2 + Bx + C = 0$ are
+\begin{equation}
+x = \frac{-B \pm \sqrt{D}}{2A}, \quad D = B^2 - 4AC
+\label{c10eq:quadf}
+\end{equation}
+
+\item The probability of an event $E$ with equally likely outcomes is
+\begin{equation}
+\Pr(E) = \frac{\text{number of favourable outcomes}}{\text{total number of outcomes}}, \quad \Pr(E) + \Pr(\bar{E}) = 1
+\label{c10eq:prob}
+\end{equation}
+If the probability of success in one trial is $s$, the pmf of the number of successes $X$ in two independent trials is
+\begin{equation}
+\mathbf{p}_X = \begin{pmatrix} \Pr(X = 0) \\ \Pr(X = 1) \\ \Pr(X = 2) \end{pmatrix} = \begin{pmatrix} (1-s)^2 \\ 2s(1-s) \\ s^2 \end{pmatrix}
+\label{c10eq:twotrials}
+\end{equation}
+
+\item For a grouped distribution, let $l$ be the lower limit and $h$ the width of the modal class (the class with the largest frequency), and let $f_1$ be its frequency, $f_0$ and $f_2$ the frequencies of the classes before and after it. With $\mathbf{f} = \begin{pmatrix} f_0 & f_1 & f_2 \end{pmatrix}^{\top}$,
+\begin{equation}
+\text{Mode} = l + h\,\frac{\begin{pmatrix} -1 & 1 & 0 \end{pmatrix}\mathbf{f}}{\begin{pmatrix} -1 & 2 & -1 \end{pmatrix}\mathbf{f}} = l + h\,\frac{f_1 - f_0}{2f_1 - f_0 - f_2}
+\label{c10eq:modegrouped}
+\end{equation}
+
+\item For vectors $\mathbf{u} = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}$, $\mathbf{v} = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}$ in the plane, the cross product (the $z$-component of the cross product with $z = 0$) is $\mathbf{u}\times\mathbf{v} = u_1v_2 - u_2v_1$. The area of $\triangle ABC$ is
+\begin{equation}
+\text{Area} = \frac{1}{2}\left|\left(\mathbf{B}-\mathbf{A}\right)\times\left(\mathbf{C}-\mathbf{A}\right)\right|
+\label{c10eq:crossarea}
+\end{equation}
+A quadrilateral $ABCD$ is split by the diagonal $AC$ into $\triangle ABC$ and $\triangle ACD$, and its area is the sum of their areas.
+
+\item A line in the plane is written in matrix form as $\mathbf{n}^{\top}\mathbf{x} = c$, where $\mathbf{n} = \begin{pmatrix} a \\ b \end{pmatrix}$ and $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$. Two lines are written together as $\mathbf{N}\mathbf{x} = \mathbf{c}$ and solved by Gauss elimination: row operations are applied to the augmented matrix $\left(\mathbf{N} \,\middle|\, \mathbf{c}\right)$ until it becomes $\left(\mathbf{I} \,\middle|\, \mathbf{s}\right)$, and then $\mathbf{x} = \mathbf{s}$. A unique solution exists when $\det\mathbf{N} \ne 0$.
+
+\item Let the circle have centre $\mathbf{O}$ and radius $r$, and let $\mathbf{P}$ be an external point with $\mathbf{w} = \mathbf{P} - \mathbf{O}$ and $g = \mathbf{w}^{\top}\mathbf{w} - r^2 > 0$. A line through $\mathbf{P}$ with direction $\mathbf{m}$ touches the circle when $\left(\mathbf{m}^{\top}\mathbf{w}\right)^2 = g\,\mathbf{m}^{\top}\mathbf{m}$, that is, when
+\begin{equation}
+\mathbf{m}^{\top}\mathbf{M}\mathbf{m} = 0, \quad \mathbf{M} = \mathbf{w}\mathbf{w}^{\top} - g\,\mathbf{I}
+\label{c10eq:tangm}
+\end{equation}
+Writing the eigen decomposition $\mathbf{M} = \mathbf{U}\begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}\mathbf{U}^{\top}$ with $\lambda_1 > 0 > \lambda_2$, the substitution $\mathbf{m} = \mathbf{U}\mathbf{z}$ gives $\lambda_1z_1^2 + \lambda_2z_2^2 = 0$, so the two tangent directions are
+\begin{equation}
+\mathbf{m} = \mathbf{U}\begin{pmatrix} \sqrt{-\lambda_2} \\ \pm\sqrt{\lambda_1} \end{pmatrix}
+\label{c10eq:tangdir}
+\end{equation}
+The points of contact are the feet of the perpendicular from $\mathbf{O}$ on these lines,
+\begin{equation}
+\mathbf{T} = \mathbf{P} - \frac{\mathbf{m}^{\top}\mathbf{w}}{\mathbf{m}^{\top}\mathbf{m}}\,\mathbf{m}
+\label{c10eq:tangpt}
+\end{equation}
+
+\item The sum of the first $N$ terms $x(0), x(1), \dots, x(N-1)$ of an AP is obtained by using the window $u(n) - u(n - N)$, which equals $1$ for $0 \le n \le N-1$ and $0$ otherwise,
+\begin{equation}
+S_N = \sum_{n=-\infty}^{\infty} x(n)\left(u(n) - u(n - N)\right) = N\,x(0) + \frac{N(N-1)}{2}\,d = \begin{pmatrix} N & \frac{N(N-1)}{2} \end{pmatrix}\begin{pmatrix} x(0) \\ d \end{pmatrix}
+\label{c10eq:apsum}
+\end{equation}
+
+\item If a polynomial $f(x)$ is divided by $d(x)$, the \emph{division algorithm} gives
+\begin{equation}
+f(x) = d(x)\,q(x) + r(x), \quad \deg r < \deg d
+\label{c10eq:divalg}
+\end{equation}
+where $q(x)$ is the quotient and $r(x)$ the remainder. The polynomial $f(x)$ is completely divisible by $d(x)$ when $r(x) = 0$, that is, $f(x) = d(x)\,q(x)$ is a product of two polynomials, and then the zeroes of $q(x)$ are also zeroes of $f(x)$.
+
+\item For a grouped distribution with class frequencies $f_i$, total $N = \sum f_i$, the cumulative frequency (the cdf at the upper limit $u_i$ of class $i$) is
+\begin{equation}
+F_i = \sum_{j \le i} f_j
+\label{c10eq:cumfreq}
+\end{equation}
+The points $(u_i, F_i)$ form the \emph{less than ogive}, and the median is the value at which $F = N/2$. If the median class (the first class with $F_i \ge N/2$) has lower limit $l$, width $h$, frequency $f$ and the cumulative frequency before it is $F_{\text{prev}}$, then
+\begin{equation}
+\text{Median} = l + \frac{\frac{N}{2} - F_{\text{prev}}}{f}\,h
+\label{c10eq:mediangrouped}
+\end{equation}

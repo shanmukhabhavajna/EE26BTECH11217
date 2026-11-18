@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1.6cm,bottom=1.8cm,left=2cm,right=2cm]{geometry}
+\usepackage{times}
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{graphicx}
+\graphicspath{{10/figs/}{12/figs/}{./}}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\hypersetup{colorlinks=true,linkcolor=red,citecolor=red,urlcolor=red}
+\titleformat{\section}[block]{\normalfont\Large\centering}{\thesection}{1em}{}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\titleformat{\subsection}{\normalfont\large\itshape}{\thesubsection.}{0.6em}{}
+\setlength{\parindent}{0pt}
+
+% numbering: Class 10 -> formulae 1.1.x, problems 1.2.x ; Class 12 -> formulae 2.1.x, problems 2.2.x
+\numberwithin{equation}{enumi}
+\newcommand{\pre}{1.1}
+\numberwithin{figure}{enumi}
+\renewcommand{\thefigure}{\pre.\arabic{enumi}.\arabic{figure}}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\theequation}{\pre.\arabic{enumi}.\arabic{equation}}
+
+% contents page title in small caps, as in the reference book
+\renewcommand{\contentsname}{\scshape Contents}
+
+% Both classes use the same label names (eq:newton, fig:q14 ...). Prefix every \label and \ref
+% with the class, so that the chapter files can stay exactly as they are.
+\newcommand{\clsprefix}{}
+\makeatletter
+\AtBeginDocument{% after hyperref has patched \label and \ref
+  \let\origlabel\label
+  \renewcommand{\label}[1]{\origlabel{\clsprefix#1}}
+  \def\ltx@label#1{\origlabel{\clsprefix#1}}% the label that amsmath uses inside equations
+  \let\origref\ref
+  \renewcommand{\ref}[1]{\origref{\clsprefix#1}}
+}
+\makeatother
+
+\begin{document}
+
+% ---------------- front page ----------------
+\pagenumbering{arabic}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE Math for EE}\\[3pt]
+\rule{0.35\textwidth}{0.5pt}\\[1.5ex]
+{\large CBSE Class 10 and Class 12 Papers}
+\vfill
+\IfFileExists{logo.jpg}{\includegraphics[width=0.22\textwidth]{logo.jpg}\\[1ex]}{}
+{\large Murru Shanmukha Bhavajna}\\[2pt]
+{\normalsize EE26BTECH11217}
+\vspace{2cm}
+\end{center}
+\clearpage
+
+% ---------------- contents ----------------
+\begin{center}{\scshape Contents}\end{center}
+\renewcommand{\contentsname}{}
+\vspace{-2.5em}
+\tableofcontents
+\clearpage
+
+% ---------------- Class 10 ----------------
+\renewcommand{\clsprefix}{c10-}
+\section{10}
+\subsection{Formulae}
+\renewcommand{\pre}{1.1}
+\begin{enumerate}[label=\pre.\arabic*.,start=1,leftmargin=2.8em,itemsep=8pt]
+\input{10/chapters/formulae}
+\end{enumerate}
+
+\clearpage
+\subsection{Problems}
+\renewcommand{\pre}{1.2}
+\begin{enumerate}[label=\pre.\arabic*.,start=1,leftmargin=2.8em,itemsep=8pt]
+\input{10/chapters/problems}
+\end{enumerate}
+
+% ---------------- Class 12 ----------------
+\clearpage
+\renewcommand{\clsprefix}{c12-}
+\section{12}
+\subsection{Formulae}
+\renewcommand{\pre}{2.1}
+\begin{enumerate}[label=\pre.\arabic*.,start=1,leftmargin=2.8em,itemsep=8pt]
+\input{12/chapters/formulae}
+\end{enumerate}
+
+\clearpage
+\subsection{Problems}
+\renewcommand{\pre}{2.2}
+\begin{enumerate}[label=\pre.\arabic*.,start=1,leftmargin=2.8em,itemsep=8pt]
+\input{12/chapters/problems}
+\end{enumerate}
+
+\end{document}

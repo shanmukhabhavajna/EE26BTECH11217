@@ -1,0 +1,157 @@
+\item For vectors $\mathbf{a}_1, \dots, \mathbf{a}_n$ let $\mathbf{M} = \begin{pmatrix} \mathbf{a}_1 & \cdots & \mathbf{a}_n \end{pmatrix}$ have them as columns. The \emph{Gram matrix} is
+\begin{equation}
+\mathbf{G} = \mathbf{M}^{\top}\mathbf{M}, \quad G_{ij} = \mathbf{a}_i^{\top}\mathbf{a}_j
+\label{c12eq:gramsum}
+\end{equation}
+and for any coefficient vector $\mathbf{x}$, $\|\mathbf{M}\mathbf{x}\|^2 = \mathbf{x}^{\top}\mathbf{G}\,\mathbf{x}$. In particular, with $\mathbf{1} = \begin{pmatrix} 1 & \cdots & 1 \end{pmatrix}^{\top}$,
+\begin{equation}
+\|\mathbf{a}_1 + \cdots + \mathbf{a}_n\|^2 = \mathbf{1}^{\top}\mathbf{G}\,\mathbf{1}
+\label{c12eq:gramsumnorm}
+\end{equation}
+which is the sum of all the entries of $\mathbf{G}$.
+
+\item A plane is written as $\mathbf{n}^{\top}\mathbf{x} = c$. Dividing by $\|\mathbf{n}\|$ gives its \emph{normalised equation}
+\begin{equation}
+\hat{\mathbf{n}}^{\top}\mathbf{x} = p, \quad \hat{\mathbf{n}} = \frac{\mathbf{n}}{\|\mathbf{n}\|}, \quad p = \frac{c}{\|\mathbf{n}\|}
+\label{c12eq:normalised}
+\end{equation}
+where $|p|$ is the distance of the plane from the origin. For two parallel planes with the same unit normal $\hat{\mathbf{n}}$, the distance between them is $\left|p_1 - p_2\right|$.
+
+\item If one trial succeeds with probability $s$, its pmf is $\begin{pmatrix} 1 - s & s \end{pmatrix}^{\top}$. For two independent trials with success probabilities $s_A$ and $s_B$, the pmf of the number of successes $X$ is the convolution of the two pmfs,
+\begin{equation}
+p_X(k) = \sum_{i + j = k} p_A(i)\,p_B(j), \quad
+\mathbf{p}_X = \begin{pmatrix} (1 - s_A)(1 - s_B) \\ (1 - s_A)s_B + s_A(1 - s_B) \\ s_As_B \end{pmatrix}
+\label{c12eq:pmfsum}
+\end{equation}
+and the probability of at least one success is $\Pr(X \ge 1) = 1 - p_X(0)$.
+
+\item For the substitution $x = \sin\theta$,
+\begin{equation}
+dx = \cos\theta\,d\theta, \quad \tan\left(\sin^{-1}x\right) = \tan\theta, \quad
+x: 0 \to 1 \iff \theta: 0 \to \frac{\pi}{2}
+\label{c12eq:sinsub}
+\end{equation}
+
+\item The \emph{trapezoidal rule} with $n$ equal intervals, $h = \dfrac{b-a}{n}$ and nodes $x_i = a + ih$, can be written as
+\begin{equation}
+\int_a^b f(x)\,dx \approx h\,\mathbf{w}^{\top}\mathbf{f}, \quad
+\mathbf{w} = \begin{pmatrix} \frac{1}{2} & 1 & \cdots & 1 & \frac{1}{2} \end{pmatrix}^{\top}, \quad
+\mathbf{f} = \begin{pmatrix} f(x_0) \\ f(x_1) \\ \vdots \\ f(x_n) \end{pmatrix}
+\label{c12eq:trapz}
+\end{equation}
+
+\item The determinant can be expanded along any column $j$ as
+\begin{equation}
+\det\mathbf{A} = \sum_{i}(-1)^{i+j}\,a_{ij}M_{ij}, \quad
+\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc
+\label{c12eq:det}
+\end{equation}
+where $M_{ij}$ is the determinant left after deleting row $i$ and column $j$.
+
+\item The \emph{Newton-Raphson method} finds a root of $f(x) = 0$ from an initial guess $x_0$ using
+\begin{equation}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\label{c12eq:newton}
+\end{equation}
+
+\item The \emph{conditional pmf} of $X$ given the event $X \in A$ is
+\begin{equation}
+p_{X|A}(x) = \begin{cases} \dfrac{p_X(x)}{\Pr(X \in A)}, & x \in A \\ 0, & x \notin A \end{cases}, \quad
+\Pr(X \in A) = \sum_{x \in A} p_X(x)
+\label{c12eq:condpmf}
+\end{equation}
+
+\item For $\dfrac{dy}{dx} + P(x)\,y = Q(x)$, the \emph{integrating factor} is the reciprocal of the solution $y_h$ of the homogeneous equation $\dfrac{dy}{dx} + P(x)\,y = 0$ (taking $C=1$),
+\begin{equation}
+\text{IF} = \frac{1}{y_h}
+\label{c12eq:ifactor}
+\end{equation}
+
+\item The Laplace transform is defined as $G(s) = \displaystyle\int_0^\infty e^{-st}g(t)\,dt$, with
+\begin{equation}
+t\,g(t) \overset{\mathcal{L}}{\longleftrightarrow} -\frac{dG(s)}{ds}, \quad
+u(t) \overset{\mathcal{L}}{\longleftrightarrow} \frac{1}{s}, \quad
+t\,u(t) \overset{\mathcal{L}}{\longleftrightarrow} \frac{1}{s^2}, \quad
+\ln t\,u(t) \overset{\mathcal{L}}{\longleftrightarrow} -\frac{\gamma + \ln s}{s}
+\label{c12eq:laplace}
+\end{equation}
+where $\gamma \approx 0.5772$ is Euler's constant.
+
+\item \emph{Euler's forward difference method} for $\dfrac{dy}{dx} = f(x,y)$, $y(x_0) = y_0$, uses $y'_n \approx \dfrac{y_{n+1}-y_n}{h}$, so that
+\begin{equation}
+y_{n+1} = y_n + h\,f(x_n, y_n), \quad x_n = x_0 + nh
+\label{c12eq:eulerfwd}
+\end{equation}
+
+\item More Laplace transform pairs,
+\begin{equation}
+g'(t) \overset{\mathcal{L}}{\longleftrightarrow} sG(s) - g(0), \quad
+e^{at}u(t) \overset{\mathcal{L}}{\longleftrightarrow} \frac{1}{s-a}, \quad \Re(s) > a
+\label{c12eq:laplace2}
+\end{equation}
+
+\item The \emph{norm} and \emph{inner product} of column vectors, and the \emph{projection} of $\mathbf{a}$ on $\mathbf{b}$, are
+\begin{equation}
+\|\mathbf{a}\| = \sqrt{\mathbf{a}^{\top}\mathbf{a}}, \quad
+\text{proj}_{\mathbf{b}}\,\mathbf{a} = \frac{\mathbf{a}^{\top}\mathbf{b}}{\|\mathbf{b}\|}
+\label{c12eq:proj}
+\end{equation}
+
+\item The angle $\theta$ between $\mathbf{a}$ and $\mathbf{b}$ satisfies
+\begin{equation}
+\cos\theta = \frac{\mathbf{a}^{\top}\mathbf{b}}{\|\mathbf{a}\|\,\|\mathbf{b}\|}, \quad
+\mathbf{a} \perp \mathbf{b} \iff \mathbf{a}^{\top}\mathbf{b} = 0
+\label{c12eq:angle}
+\end{equation}
+
+\item The distance of a point $\mathbf{P}$ from the line $\mathbf{x} = \mathbf{A} + \lambda\mathbf{m}$ is the length of the component of $\mathbf{P}-\mathbf{A}$ perpendicular to $\mathbf{m}$,
+\begin{equation}
+d = \left\| \left(\mathbf{I} - \frac{\mathbf{m}\mathbf{m}^{\top}}{\|\mathbf{m}\|^{2}}\right)(\mathbf{P}-\mathbf{A}) \right\|, \quad
+\mathbf{Q} = \mathbf{A} + \frac{\mathbf{m}\mathbf{m}^{\top}}{\|\mathbf{m}\|^{2}}(\mathbf{P}-\mathbf{A})
+\label{c12eq:distline}
+\end{equation}
+where $\mathbf{Q}$ is the foot of the perpendicular from $\mathbf{P}$ to the line.
+
+\item For a triangle with vertices $\mathbf{A},\mathbf{B},\mathbf{C}$, let the side vectors be the columns of
+\begin{equation}
+\mathbf{D} = \begin{pmatrix} \mathbf{B}-\mathbf{A} & \mathbf{C}-\mathbf{B} & \mathbf{A}-\mathbf{C} \end{pmatrix}, \quad
+\mathbf{G} = \mathbf{D}^{\top}\mathbf{D}
+\label{c12eq:gram}
+\end{equation}
+The diagonal of $\mathbf{G}$ gives the squared side lengths, and by \eqref{c12eq:angle} the triangle is right-angled if some off-diagonal entry of $\mathbf{G}$ is zero.
+
+\item The \emph{pmf} of a discrete random variable $X$ is $p_X(k) = \Pr(X = k)$, with $\sum_k p_X(k) = 1$. For two draws, the multiplication rule gives
+\begin{equation}
+\Pr(A \cap B) = \Pr(A)\,\Pr(B \mid A)
+\label{c12eq:mult}
+\end{equation}
+
+\item The probability of an event $X \in S$ is $\Pr(X \in S) = \sum_{x \in S} p_X(x)$. For $X \in \{0,1,2\}$ the cumulative probabilities are obtained from the pmf vector $\mathbf{p}$ as
+\begin{equation}
+\begin{pmatrix} \Pr(X \le 0) \\ \Pr(X \le 1) \\ \Pr(X \le 2) \end{pmatrix}
+= \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 1 & 1 \end{pmatrix}\mathbf{p}, \quad
+\Pr(X \ge k) = 1 - \Pr(X < k)
+\label{c12eq:cdf}
+\end{equation}
+
+\item The shortest distance between the lines $\mathbf{x} = \mathbf{a}_1 + \lambda\mathbf{m}_1$ and $\mathbf{x} = \mathbf{a}_2 + \mu\mathbf{m}_2$ (not parallel) is the component of $\mathbf{a}_2 - \mathbf{a}_1$ along $\mathbf{n} = \mathbf{m}_1 \times \mathbf{m}_2$,
+\begin{equation}
+d = \frac{\left|\mathbf{n}^{\top}(\mathbf{a}_2 - \mathbf{a}_1)\right|}{\|\mathbf{n}\|}, \quad
+\mathbf{m}_1 \times \mathbf{m}_2 = \begin{vmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3 \\ m_{11} & m_{12} & m_{13} \\ m_{21} & m_{22} & m_{23} \end{vmatrix}
+\label{c12eq:skew}
+\end{equation}
+The lines intersect if and only if $d = 0$.
+
+\item \emph{Gauss elimination} solves $\mathbf{A}\mathbf{x} = \mathbf{b}$ by applying row operations $R_i \leftarrow R_i - \ell_{ij}R_j$ to the augmented matrix until it is in echelon form, and then back-substituting,
+\begin{equation}
+\begin{pmatrix} \mathbf{A} & \mathbf{b} \end{pmatrix} \longrightarrow \begin{pmatrix} \mathbf{U} & \mathbf{c} \end{pmatrix}
+\label{c12eq:gauss}
+\end{equation}
+where $\mathbf{U}$ is upper triangular. Free variables give a line of solutions. A plane at unit distance from the origin can be written $\mathbf{u}^{\top}\mathbf{x} = 1$ with $\|\mathbf{u}\| = 1$.
+
+\item Three points $\mathbf{P}_i = \begin{pmatrix} x_i \\ y_i \end{pmatrix}$ are collinear if and only if the determinant below is zero, and when they are not, it gives the area of the triangle they form,
+\begin{equation}
+\begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = 0, \qquad
+\text{Area} = \frac{1}{2}\left|\begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix}\right|
+\label{c12eq:area}
+\end{equation}
