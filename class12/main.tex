@@ -1,0 +1,40 @@
+\documentclass[10pt]{article}
+\usepackage[a5paper, margin=10mm]{geometry}
+\usepackage{gvv-book}
+\usepackage{gvv}
+\raggedbottom
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=red, citecolor=red}
+\usepackage{amsfonts}
+\makeindex
+
+\begin{document}
+\onecolumn
+
+\title{
+	\begin{center}
+	Math for Class 12
+	\\
+	\rule{0.4\columnwidth}{0.4pt}
+	\end{center}
+}
+\author{}
+\date{}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section{CBSE Class 12 Mathematics 65/C/3}
+\subsection{Formulae}
+\label{pg:formulae}
+\input{chapters/formulae.tex}
+\newpage
+\subsection{Problems}
+\label{pg:problems}
+\input{chapters/problems.tex}
+\label{pg:end}
+\end{document}

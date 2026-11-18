@@ -1,0 +1,115 @@
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi,itemsep=0pt]
+
+\item The position vector of the point $\brak{x,y,z}$ is $\vec{a} = \myvec{x \\ y \\ z}$. The magnitude and dot product are
+\begin{align}
+\norm{\vec{a}} = \sqrt{\vec{a}^{\top}\vec{a}}, \quad \vec{a}^{\top}\vec{b} = \norm{\vec{a}}\norm{\vec{b}}\cos\theta
+\label{eq:cb12-dot}
+\end{align}
+The vectors are perpendicular if $\vec{a}^{\top}\vec{b} = 0$.
+
+\item The projection of $\vec{a}$ on $\vec{b}$ is
+\begin{align}
+\frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{b}}}, \quad \frac{\text{proj. of } \vec{a} \text{ on } \vec{b}}{\text{proj. of } \vec{b} \text{ on } \vec{a}} = \frac{\norm{\vec{a}}}{\norm{\vec{b}}}
+\label{eq:cb12-proj}
+\end{align}
+
+\item A plane is $\vec{n}^{\top}\vec{x} = c$. Two planes $\vec{n}_1^{\top}\vec{x} = c_1$, $\vec{n}_2^{\top}\vec{x} = c_2$ with $\vec{n}_1 = \lambda\vec{n}_2$ are parallel and their distance is
+\begin{align}
+d = \frac{\abs{c_1 - \lambda c_2}}{\norm{\vec{n}_1}}
+\label{eq:cb12-planes}
+\end{align}
+
+\item The distance of the point $\vec{P}$ from the line through $\vec{A}$ with direction $\vec{e}$ ($\norm{\vec{e}} = 1$) is $\norm{\vec{P}-\vec{A} - \brak{\vec{e}^{\top}\brak{\vec{P}-\vec{A}}}\vec{e}}$. For the $x$-axis and $\vec{P} = \myvec{a \\ b \\ c}$ it is $\sqrt{b^2+c^2}$.
+\label{eq:cb12-axis}
+
+\item \textbf{Shortest distance between two lines} $\vec{x} = \vec{p}_1 + s\vec{d}_1$ and $\vec{x} = \vec{p}_2 + t\vec{d}_2$. Minimising $\norm{\vec{w} + s\vec{d}_1 - t\vec{d}_2}^2$, $\vec{w} = \vec{p}_1 - \vec{p}_2$, gives the normal equations
+\begin{align}
+\myvec{\vec{d}_1^{\top}\vec{d}_1 & -\vec{d}_1^{\top}\vec{d}_2 \\ \vec{d}_1^{\top}\vec{d}_2 & -\vec{d}_2^{\top}\vec{d}_2}\myvec{s \\ t} = -\myvec{\vec{d}_1^{\top}\vec{w} \\ \vec{d}_2^{\top}\vec{w}}
+\label{eq:cb12-skew}
+\end{align}
+solved by Gauss elimination \eqref{eq:cb12-gauss}. The shortest distance is $\norm{\brak{\vec{p}_1 + s\vec{d}_1} - \brak{\vec{p}_2 + t\vec{d}_2}}$; the lines intersect iff it is $0$. No cross product is needed.
+
+\item The planes through the intersection of $\vec{n}_1^{\top}\vec{x} = c_1$ and $\vec{n}_2^{\top}\vec{x} = c_2$ are
+\begin{align}
+\brak{\vec{n}_1 + \lambda\vec{n}_2}^{\top}\vec{x} = c_1 + \lambda c_2
+\label{eq:cb12-family}
+\end{align}
+and the distance of $\vec{n}^{\top}\vec{x} = c$ from the origin is $\dfrac{\abs{c}}{\norm{\vec{n}}}$.
+
+\item A vector perpendicular to $\vec{u}$ and $\vec{v}$ solves the homogeneous system $\vec{n}^{\top}\vec{u} = 0$, $\vec{n}^{\top}\vec{v} = 0$. Setting one component to $1$ and using Gauss elimination gives $\vec{n}$; the unit vector is $\pm\dfrac{\vec{n}}{\norm{\vec{n}}}$.
+\label{eq:cb12-perp}
+
+\item The area of the triangle with vertices $\vec{A}, \vec{B}, \vec{D}$ is
+\begin{align}
+\frac{1}{2}\abs{\vec{n}^{\top}\brak{\vec{D}-\vec{A}}}, \quad \vec{n} = \myvec{0 & 1 \\ -1 & 0}\brak{\vec{B}-\vec{A}}
+\label{eq:cb12-area}
+\end{align}
+The line through $\vec{A}, \vec{B}$ is $\vec{n}^{\top}\vec{x} = \vec{n}^{\top}\vec{A}$.
+
+\item The probability mass function (pmf) of a discrete random variable $X$ is $p_X(x) = \pr{X=x}$ with
+\begin{align}
+\sum_x p_X(x) = 1, \quad \pr{X \in E} = \sum_{x\in E}p_X(x), \quad \pr{E'} = 1 - \pr{E}
+\label{eq:cb12-pmf}
+\end{align}
+For independent $A, B$ the joint pmf is the outer product $p_{AB} = p_A p_B^{\top}$ and for $S = X+Y$ the pmf is the convolution $p_S = p_X * p_Y$.
+
+\item The conditional probability is
+\begin{align}
+\pr{A|B} = \frac{\pr{AB}}{\pr{B}}
+\label{eq:cb12-cond}
+\end{align}
+
+\item \textbf{Determinants.} By cofactor expansion along the first row
+\begin{align}
+\mydet{a & b \\ c & d} = ad - bc, \quad \mydet{\vec{A}} = \sum_{j}\brak{-1}^{1+j}a_{1j}M_{1j}
+\label{eq:cb12-det}
+\end{align}
+A square matrix is singular iff $\mydet{\vec{A}} = 0$, and $\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}}$. Row operations $R_i \leftarrow R_i + cR_j$ leave the determinant unchanged. Determinants are used only to evaluate $\mydet{\vec{A}}$, never to solve linear equations.
+
+\item \textbf{Laplace transform.} For $t \ge 0$,
+\begin{align}
+F(s) = \int_0^{\infty} e^{-st}f(t)\,dt, \quad L\{1\} = \frac{1}{s},\ L\{t\} = \frac{1}{s^2},\ L\{e^{at}\} = \frac{1}{s-a}
+\label{eq:cb12-laplace}
+\end{align}
+The differentiation properties are
+\begin{align}
+L\{f'\}(s) &= sF(s) - f(0) \label{eq:cb12-lap1}\\
+L\{f''\}(s) &= s^2F(s) - sf(0) - f'(0) \label{eq:cb12-lap2}
+\end{align}
+\solution Integrating by parts, $\int_0^\infty e^{-st}f'(t)\,dt = \left[e^{-st}f(t)\right]_0^\infty + s\int_0^\infty e^{-st}f(t)\,dt = -f(0) + sF(s)$. Applying this twice gives \eqref{eq:cb12-lap2}. On a finite interval $[0,T]$ the extra term $e^{-sT}f(T)$ appears. In the codes $F(s)$ is evaluated numerically with the trapezoidal rule \eqref{eq:cb12-trap}.
+
+\item \textbf{Euler forward difference.} For small $h$,
+\begin{align}
+f'(x) \approx \frac{f(x+h) - f(x)}{h}, \quad f''(x) \approx \frac{f(x+2h) - 2f(x+h) + f(x)}{h^2}
+\label{eq:cb12-euler-diff}
+\end{align}
+For $\frac{dy}{dx} = F(x,y)$, $y(x_0) = y_0$, the Euler forward method is
+\begin{align}
+y_{n+1} = y_n + hF\brak{x_n, y_n}
+\label{eq:cb12-euler}
+\end{align}
+
+\item \textbf{Linear differential equations.} The equation $\frac{dy}{dx} + P(x)y = Q(x)$ has integrating factor $e^{\int P\,dx}$. With the substitution $x = e^t$, $x\frac{dy}{dx} = \frac{dy}{dt}$ and equations of the form $x\frac{dy}{dx} = \alpha y + g(x)$ become constant coefficient equations that are solved by the Laplace transform \eqref{eq:cb12-lap1}.
+\label{eq:cb12-linode}
+
+\item \textbf{Trapezoidal rule.} For $N$ sub-intervals of width $h = \dfrac{b-a}{N}$,
+\begin{align}
+\int_a^b f(x)\,dx \approx \frac{h}{2}\sbrak{f(x_0) + 2\sum_{i=1}^{N-1}f(x_i) + f(x_N)}
+\label{eq:cb12-trap}
+\end{align}
+The limit of sums is $\int_a^b f(x)\,dx = \lim_{N\to\infty}h\sum_{i=1}^{N}f\brak{a + ih}$.
+
+\item \textbf{Newton-Raphson method.} A root of $f(x) = 0$ is obtained from
+\begin{align}
+x_{n+1} = x_n - \frac{f\brak{x_n}}{f'\brak{x_n}}
+\label{eq:cb12-nr}
+\end{align}
+
+\item \textbf{Gauss elimination.} The system $\vec{A}\vec{x} = \vec{b}$ is reduced by row operations
+\begin{align}
+\myvec{\vec{A} & \vec{b}} \xrightarrow{\text{row operations}} \myvec{\vec{U} & \vec{c}}
+\label{eq:cb12-gauss}
+\end{align}
+with $\vec{U}$ upper triangular, and solved by back substitution.
+
+\end{enumerate}
